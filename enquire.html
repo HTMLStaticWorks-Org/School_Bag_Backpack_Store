@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquire | ZIPPACK — School Bag &amp; Backpack Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Send a backpack or back-to-school deal enquiry to ZIPPACK. Enquire about age-wise school bags, combo sets, partner brands or school bulk orders.">
+  <meta property="og:title" content="Enquire | ZIPPACK — School Bag &amp; Backpack Store">
+  <meta property="og:description" content="Submit your backpack, back-to-school combo or bulk school order enquiry online.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-frozen-food.webp">
+
+  <!-- Google Fonts: Outfit (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Global Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       GLOBAL STICKY HEADER
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="ZIPPACK Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+              <path d="M8 10h8"/>
+            </svg>
+          </span>
+          <span class="brand-logo-text">
+            <span class="brand-logo-title">ZIPPACK</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="home-2.html" class="nav-link-item">Home 2</a></li>
+            <li><a href="products.html" class="nav-link-item">Products</a></li>
+            <li><a href="brands.html" class="nav-link-item">Brands</a></li>
+            <li><a href="storage-delivery.html" class="nav-link-item">Care &amp; Delivery</a></li>
+            <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="icon-action-btn" id="headerSearchToggleBtn" aria-expanded="false" aria-controls="headerSearchBar" aria-label="Toggle product search" title="Search Backpacks">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="rtlToggleBtn" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout direction" title="Toggle RTL / LTR">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="themeToggleBtn" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme" title="Toggle Dark / Light Mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" data-open-cart aria-label="Open Bag Enquiry Cart" title="Bag Enquiry List">
+            <i class="bi bi-bag-check"></i>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <a href="enquire.html" class="btn-brand-primary header-cta-desktop" aria-current="page">Enquire Now</a>
+
+          <button type="button" class="hamburger-btn" id="mobileMenuOpenBtn" aria-expanded="false" aria-controls="mobileNavDrawer" aria-label="Open navigation menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-search-bar" id="headerSearchBar">
+      <div class="container">
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label for="headerSearchInput" class="visually-hidden">Search school bags and backpacks</label>
+          <input type="search" id="headerSearchInput" class="header-search-input" placeholder="Search toddler bags, orthopedic school packs, laptop backpacks, trolley bags...">
+          <button type="submit" class="btn-brand-primary py-2 px-3">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-backdrop" id="sharedOverlayBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <span class="fw-bold" style="font-family: var(--font-heading); color: var(--navy-primary);">STORE NAVIGATION</span>
+        <button type="button" class="drawer-close-btn" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-tools">
+        <form class="mobile-drawer-search-form" data-drawer-search-form role="search">
+          <input type="search" class="mobile-drawer-search-input" placeholder="Search school bags..." aria-label="Search school bags and backpacks">
+          <button type="submit" class="btn-brand-primary py-2 px-3" aria-label="Submit search"><i class="bi bi-search"></i></button>
+        </form>
+        <div class="mobile-drawer-actions-grid">
+          <button type="button" class="mobile-drawer-action-item" data-open-cart aria-label="Open Bag Enquiry Cart">
+            <i class="bi bi-bag-check"></i>
+            <span>Bag List</span>
+            <span class="cart-count-badge">0</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme">
+            <i class="bi bi-moon-stars"></i>
+            <span>Theme</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html"><span>Home</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="home-2.html"><span>Home 2</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="products.html"><span>Products</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="brands.html"><span>Brands</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="storage-delivery.html"><span>Care &amp; Delivery</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="enquire.html" class="active"><span>Enquire Now</span> <i class="bi bi-arrow-up-right-circle"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="small mb-2 fw-semibold" style="color: var(--navy-primary);">COLORFUL CARRY. BACK-TO-SCHOOL READY.</p>
+      <a href="products.html" class="btn-brand-primary w-100">Explore Backpack Range</a>
+    </div>
+  </aside>
+
+  <!-- Enquiry Cart Slide-Over Drawer -->
+  <aside class="enquiry-cart-drawer" id="enquiryCartDrawer" aria-hidden="true" aria-label="Bag Enquiry List">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill" style="color: var(--mint-secondary); font-size: 1.2rem;"></i>
+        <h3>Bag Enquiry List</h3>
+      </div>
+      <button type="button" class="drawer-close-btn" id="enquiryCartCloseBtn" aria-label="Close enquiry cart">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="enquiryCartBody"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span class="text-muted small">Selected Quantity:</span>
+        <strong id="enquiryCartCount">0 Bags</strong>
+      </div>
+      <div class="cart-summary-line mb-2">
+        <span class="text-muted small">Estimated Deal Total:</span>
+        <strong id="enquiryCartTotal" style="font-size: 1.15rem; color: var(--navy-primary);">₹0</strong>
+      </div>
+      <p class="small text-muted mb-3" style="font-size: 0.75rem;">*Back-to-school deal prices are for demonstration only. Submit an enquiry to confirm current store stock and combo offers.</p>
+      <div class="d-grid gap-2">
+        <a href="enquire.html?prefill=cart" id="sendEnquiryCartBtn" class="btn-brand-primary">SEND BAG ENQUIRY</a>
+        <button type="button" id="clearEnquiryCartBtn" class="btn-brand-secondary py-2" style="font-size: 0.8rem;">Clear Enquiry List</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         ENQUIRE PAGE HERO BANNER (STANDARDIZED HEIGHT ACROSS ALL NON-HOME PAGES)
+         ====================================================================== -->
+    <section class="page-hero-banner" aria-labelledby="enquire-hero-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 col-md-7">
+            <span class="eyebrow-badge"><i class="bi bi-bag-heart-fill"></i> Back-to-School &amp; Bulk Enquiry Desk</span>
+            <h1 id="enquire-hero-heading">SEND YOUR BACKPACK &amp; DEAL ENQUIRY.</h1>
+            <p>
+              Enquire about back-to-school combo deals, age-specific school bag stock, partner brand models or custom institutional bulk orders using the form below.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-5 text-md-end">
+            <button type="button" class="btn-brand-mint" data-open-cart>
+              <i class="bi bi-bag-check"></i> View Bag Enquiry List (<span class="cart-count-badge position-static border-0 p-0 bg-transparent text-dark">0</span>)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ENQUIRE FORM SECTION (AFTER HERO SECTION)
+         ====================================================================== -->
+    <section id="orderEnquiryFormSection" class="section-block section-bg-ice" aria-labelledby="enquiry-form-heading">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- LEFT COLUMN: Enquiry Assistance & Store Highlights -->
+          <div class="col-lg-5">
+            <div class="contact-info-card">
+              <span class="eyebrow-badge mb-3">Quick Enquiry Guide</span>
+              <h2 class="text-white mb-3" style="font-size: 1.65rem;">HOW OUR ENQUIRY DESK HELPS YOU.</h2>
+              <p class="small mb-4">
+                Whether you are a parent shopping for back-to-school combo deals or a school administrator ordering 200 custom-crested backpacks, our team responds promptly with stock and pricing details.
+              </p>
+
+              <!-- 1. Back-to-School Combo Deals -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-tags-fill"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Back-to-School Combo Deals</h3>
+                  <p class="mb-0 small text-white">Up to 40% Off 4-in-1 Sets &amp; Sibling Bundles</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Check live color availability &amp; combo offers</span>
+                </div>
+              </div>
+
+              <!-- 2. Age & Size Fitting Help -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-rulers"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Age &amp; Ergonomic Fitting Advice</h3>
+                  <p class="mb-0 small text-white">Kids (3–7), School (8–13), Teens &amp; Sports</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Get capacity (10L–35L) recommendations by grade</span>
+                </div>
+              </div>
+
+              <!-- 3. School & Institutional Bulk Orders -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-building"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">School &amp; Institutional Bulk Desk</h3>
+                  <p class="mb-0 small text-white">Custom School Logo Printing &amp; Wholesale Rates</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Special pricing for 50+ bags for schools &amp; camps</span>
+                </div>
+              </div>
+
+              <!-- 4. Direct Helpline & Store Info -->
+              <div class="contact-detail-item border-bottom-0 pb-0">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-telephone"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Direct Enquiry Helpline</h3>
+                  <p class="mb-0 small text-white">[+91 98765 43210 &bull; Mon–Sun: 10 AM – 9 PM]</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Need store address &amp; map? Visit our Contact page</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top" style="border-color: rgba(255,255,255,0.16) !important;">
+                <h3 class="mb-2" style="font-size: 0.92rem; color: var(--lime-accent); text-transform: uppercase; letter-spacing: 0.05em;">Explore More</h3>
+                <p class="small mb-3" style="color: rgba(255,255,255,0.75);">Want to browse more bags by age and type or check our store address first?</p>
+                <div class="d-grid gap-2">
+                  <a href="products.html" class="btn-brand-mint w-100">
+                    <i class="bi bi-backpack2"></i> Browse Products by Age &amp; Type
+                  </a>
+                  <a href="contact.html" class="btn-brand-outline-white w-100">
+                    <i class="bi bi-geo-alt"></i> View Store Info &amp; Location Map
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Functional Bag & Deal Enquiry Form -->
+          <div class="col-lg-7">
+            <div class="enquiry-form-card">
+              <span class="eyebrow-badge-mint">Backpack, Combo &amp; Bulk Enquiry Form</span>
+              <h2 id="enquiry-form-heading" class="mb-2" style="font-size: 1.75rem;">COMPLETE YOUR ENQUIRY FORM</h2>
+              <p class="small mb-4">
+                Fill in the details below to enquire about backpack availability, back-to-school combo deals, partner brands or delivery options. Fields marked with <span class="text-danger">*</span> are required.
+              </p>
+
+              <!-- Auto-Prefill Notice Banner (shown when arriving with items in Enquiry Cart) -->
+              <div id="cartPrefillNotice" class="p-3 mb-4 rounded border" style="background-color: var(--bg-soft-mint); border-color: var(--mint-secondary) !important;" hidden>
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <div class="small" style="color: var(--navy-primary);">
+                    <i class="bi bi-check2-circle me-1 fw-bold"></i>
+                    <strong>Bag Enquiry List Loaded:</strong> Your selected backpacks and quantities have been prefilled below.
+                  </div>
+                  <button type="button" class="btn-brand-secondary py-1 px-2" style="font-size: 0.75rem;" data-open-cart>
+                    Edit Selected Bags
+                  </button>
+                </div>
+              </div>
+
+              <!-- Demo Submission Confirmation Panel -->
+              <div id="enquirySuccessConfirmation" class="p-4 mb-4 rounded-3 border" style="background-color: var(--bg-soft-mint); border-color: var(--mint-secondary) !important;" role="status" aria-live="polite" hidden>
+                <div class="d-flex align-items-start gap-3">
+                  <div class="fs-3" style="color: var(--veg-green);"><i class="bi bi-check-circle-fill"></i></div>
+                  <div class="w-100">
+                    <h3 class="mb-1" style="font-size: 1.2rem; color: var(--navy-primary);">Demo Bag Enquiry Confirmation Received!</h3>
+                    <p class="small mb-2" style="color: var(--text-main);">
+                      Thank you for testing the backpack enquiry workflow. <strong>Please note:</strong> This website is a frontend-only demonstration prototype—your submission is displayed here for preview purposes.
+                    </p>
+                    <div id="submittedEnquirySummary"></div>
+                  </div>
+                </div>
+              </div>
+
+              <form id="orderEnquiryForm" novalidate>
+                <div class="row g-3">
+                  <!-- 1. Full Name -->
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label-brand">1. Full Name <span class="text-danger">*</span></label>
+                    <input type="text" id="fullName" name="fullName" class="form-control-brand" placeholder="Enter parent, student or school name" required autocomplete="name">
+                    <div class="field-error-msg">Please enter your full name (at least 2 characters).</div>
+                  </div>
+
+                  <!-- 2. Phone Number -->
+                  <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label-brand">2. Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control-brand" placeholder="e.g. +91 98765 43210" required autocomplete="tel">
+                    <div class="field-error-msg">Please enter a valid 10-digit phone number.</div>
+                  </div>
+
+                  <!-- 3. Email Address -->
+                  <div class="col-md-6">
+                    <label for="emailAddress" class="form-label-brand">3. Email Address <span class="text-danger">*</span></label>
+                    <input type="email" id="emailAddress" name="emailAddress" class="form-control-brand" placeholder="you@example.com" required autocomplete="email">
+                    <div class="field-error-msg">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- 4. Enquiry Type -->
+                  <div class="col-md-6">
+                    <label for="enquiryType" class="form-label-brand">4. Enquiry Type <span class="text-danger">*</span></label>
+                    <select id="enquiryType" name="enquiryType" class="form-control-brand" required>
+                      <option value="">Select Enquiry Type</option>
+                      <option value="Back-to-School Deal Enquiry">Back-to-School Deal Enquiry</option>
+                      <option value="Product Availability">Product Availability</option>
+                      <option value="School / Institutional Bulk Order">School / Institutional Bulk Order</option>
+                      <option value="Partner Brand & Warranty Query">Partner Brand &amp; Warranty Query</option>
+                      <option value="Store Pickup / Delivery Enquiry">Store Pickup / Delivery Enquiry</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div class="field-error-msg">Please select an enquiry type.</div>
+                  </div>
+
+                  <!-- 5. Age & Bag Category -->
+                  <div class="col-md-6">
+                    <label for="productCategory" class="form-label-brand">5. Age Group &amp; Bag Type <span class="text-danger">*</span></label>
+                    <select id="productCategory" name="productCategory" class="form-control-brand" required>
+                      <option value="">Select Age &amp; Bag Category</option>
+                      <option value="Kids (Ages 3-7)">Kids (Ages 3-7)</option>
+                      <option value="School (Ages 8-13)">School (Ages 8-13)</option>
+                      <option value="Teens & College">Teens &amp; College</option>
+                      <option value="Sports & Daypacks">Sports &amp; Daypacks</option>
+                      <option value="Multiple Categories">Multiple Categories</option>
+                    </select>
+                    <div class="field-error-msg">Please select an age and bag category.</div>
+                  </div>
+
+                  <!-- 7. Quantity -->
+                  <div class="col-md-6">
+                    <label for="productQuantity" class="form-label-brand">7. Quantity <span class="text-danger">*</span></label>
+                    <input type="text" id="productQuantity" name="productQuantity" class="form-control-brand" placeholder="e.g. 2 Bags / 1 Combo Set / 50 Bulk Bags" required>
+                    <div class="field-error-msg">Please specify the desired bag quantity.</div>
+                  </div>
+
+                  <!-- 6. Interested Products -->
+                  <div class="col-12">
+                    <label for="interestedProducts" class="form-label-brand">6. Interested Backpacks / Brands <span class="text-danger">*</span></label>
+                    <input type="text" id="interestedProducts" name="interestedProducts" class="form-control-brand" placeholder="e.g. DinoRoar 3D Toddler Backpack, GlideWheel 6-Wheel Trolley Bag, UrbanTech 16&quot; Laptop Pack" required>
+                    <div class="field-error-msg">Please list the backpacks or brands you are interested in.</div>
+                  </div>
+
+                  <!-- 8. Delivery Location -->
+                  <div class="col-12">
+                    <label for="deliveryLocation" class="form-label-brand">8. City / Delivery Location <span class="text-danger">*</span></label>
+                    <input type="text" id="deliveryLocation" name="deliveryLocation" class="form-control-brand" placeholder="Enter your neighbourhood, city or PIN code" required>
+                    <div class="field-error-msg">Please enter your delivery area or city.</div>
+                  </div>
+
+                  <!-- 9. Message -->
+                  <div class="col-12">
+                    <label for="enquiryMessage" class="form-label-brand">9. Enquiry Message <span class="text-danger">*</span></label>
+                    <textarea id="enquiryMessage" name="enquiryMessage" rows="4" class="form-control-brand" placeholder="Share any questions regarding student age sizing, color options, back-to-school combo discounts or school bulk printing..." required></textarea>
+                    <div class="field-error-msg">Please enter your enquiry message (at least 8 characters).</div>
+                  </div>
+
+                  <!-- Prototype Disclaimer & Submit CTA -->
+                  <div class="col-12">
+                    <div class="p-3 rounded border bg-light small text-muted mb-3">
+                      <i class="bi bi-info-circle me-1"></i>
+                      <strong>Frontend Prototype Notice:</strong> Submitting this form displays an interactive demo confirmation on screen. It does not process online payments or transmit live orders to a backend server.
+                    </div>
+                    <button type="submit" class="btn-brand-primary w-100 py-3">
+                      SUBMIT BAG ENQUIRY <i class="bi bi-send ms-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">
+            <span class="brand-logo-mark" style="background-color: var(--mint-secondary); color: #FFFFFF;" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+                <path d="M8 10h8"/>
+              </svg>
+            </span>
+            <span class="brand-logo-text">
+              <span class="brand-logo-title text-white">ZIPPACK</span>
+            </span>
+          </a>
+          <p class="small mb-3" style="color: rgba(255,255,255,0.8); max-width: 340px;">
+            Colorful school bags and ergonomic backpacks built for every age and grade. Explore toddler packs, orthopedic bookbags, college laptop bags and sports daypacks.
+          </p>
+          <div class="contact-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp" title="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube" title="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)" title="X (Twitter)">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-title">Shop by Age &amp; Type</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Kids%20(Ages%203-7)">Kids (Ages 3–7)</a></li>
+            <li><a href="products.html?category=School%20(Ages%208-13)">School (Ages 8–13)</a></li>
+            <li><a href="products.html?category=Teens%20%26%20College">Teens &amp; College</a></li>
+            <li><a href="products.html?category=Sports%20%26%20Daypacks">Sports &amp; Daypacks</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-title">Store &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Store Info &amp; Hours</a></li>
+            <li><a href="enquire.html?prefill=cart">Bag &amp; Deal Enquiries</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery Guide</a></li>
+            <li><a href="brands.html">Partner Brands</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ZIPPACK. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="storage-delivery.html#faq-section" class="text-white-50">Delivery &amp; Care FAQs</a>
+          <a href="brands.html#faq-section" class="text-white-50">Brand Warranty FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

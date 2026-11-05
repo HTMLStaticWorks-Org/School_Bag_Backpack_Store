@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home 2 | ZIPPACK — School Bag &amp; Backpack Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Smart Packs. Bold Colors. Built for Every Grade. Discover vibrant kids' school bags, orthopedic bookbags, 16-inch laptop backpacks and back-to-school combo deals.">
+  <meta property="og:title" content="Home 2 | ZIPPACK — School Bag &amp; Backpack Store">
+  <meta property="og:description" content="Your Favourite Backpacks, Ready for the New Term. Explore our colorful school bag &amp; backpack collection.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/veg-paratha.webp">
+
+  <!-- Google Fonts: Outfit (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Global & Home 2 Dedicated Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home-2.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       SECTION 10 – STICKY GLASS HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header header-home2" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <!-- LEFT: Brand Logo & Wordmark -->
+        <a href="index.html" class="brand-logo" aria-label="ZIPPACK Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+              <path d="M8 10h8"/>
+            </svg>
+          </span>
+          <span class="brand-logo-text">
+            <span class="brand-logo-title">ZIPPACK</span>
+          </span>
+        </a>
+
+        <!-- CENTER: Desktop Navigation (Home, Home 2, Products, Brands, Care & Delivery, Contact) -->
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="home-2.html" class="nav-link-item active" aria-current="page">Home 2</a></li>
+            <li><a href="products.html" class="nav-link-item">Products</a></li>
+            <li><a href="brands.html" class="nav-link-item">Brands</a></li>
+            <li><a href="storage-delivery.html" class="nav-link-item">Care &amp; Delivery</a></li>
+            <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- RIGHT: Search, RTL Toggle, Theme Toggle, Enquiry Cart & Mobile Hamburger -->
+        <div class="header-actions">
+          <button type="button" class="icon-action-btn" id="headerSearchToggleBtn" aria-expanded="false" aria-controls="headerSearchBar" aria-label="Toggle product search" title="Search Backpacks">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="rtlToggleBtn" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout direction" title="Toggle RTL / LTR">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="themeToggleBtn" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme" title="Toggle Dark / Light Mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" data-open-cart aria-label="Open Bag Enquiry Cart" title="Bag Enquiry List">
+            <i class="bi bi-bag-check"></i>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <a href="enquire.html" class="btn-brand-primary header-cta-desktop">Enquire Now</a>
+
+          <button type="button" class="hamburger-btn" id="mobileMenuOpenBtn" aria-expanded="false" aria-controls="mobileNavDrawer" aria-label="Open navigation menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Search Bar -->
+    <div class="header-search-bar" id="headerSearchBar">
+      <div class="container">
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label for="headerSearchInput" class="visually-hidden">Search school bags and backpacks</label>
+          <input type="search" id="headerSearchInput" class="header-search-input" placeholder="Search toddler bags, orthopedic school packs, laptop backpacks, trolley bags...">
+          <button type="submit" class="btn-brand-primary py-2 px-3">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shared Backdrop -->
+  <div class="mobile-nav-backdrop" id="sharedOverlayBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <span class="fw-bold" style="font-family: var(--font-heading); color: var(--navy-primary);">STORE NAVIGATION</span>
+        <button type="button" class="drawer-close-btn" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-tools">
+        <form class="mobile-drawer-search-form" data-drawer-search-form role="search">
+          <input type="search" class="mobile-drawer-search-input" placeholder="Search school bags..." aria-label="Search school bags and backpacks">
+          <button type="submit" class="btn-brand-primary py-2 px-3" aria-label="Submit search"><i class="bi bi-search"></i></button>
+        </form>
+        <div class="mobile-drawer-actions-grid">
+          <button type="button" class="mobile-drawer-action-item" data-open-cart aria-label="Open Bag Enquiry Cart">
+            <i class="bi bi-bag-check"></i>
+            <span>Bag List</span>
+            <span class="cart-count-badge">0</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme">
+            <i class="bi bi-moon-stars"></i>
+            <span>Theme</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html"><span>Home</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="home-2.html" class="active"><span>Home 2</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="products.html"><span>Products</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="brands.html"><span>Brands</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="storage-delivery.html"><span>Care &amp; Delivery</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="enquire.html"><span>Enquire Now</span> <i class="bi bi-arrow-up-right-circle"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="small mb-2 fw-semibold" style="color: var(--navy-primary);">SMART PACKS. BOLD COLORS. EVERY GRADE.</p>
+      <a href="products.html" class="btn-brand-primary w-100">Explore Backpack Range</a>
+    </div>
+  </aside>
+
+  <!-- Enquiry Cart Slide-Over Drawer -->
+  <aside class="enquiry-cart-drawer" id="enquiryCartDrawer" aria-hidden="true" aria-label="Bag Enquiry List">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill" style="color: var(--mint-secondary); font-size: 1.2rem;"></i>
+        <h3>Bag Enquiry List</h3>
+      </div>
+      <button type="button" class="drawer-close-btn" id="enquiryCartCloseBtn" aria-label="Close enquiry cart">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="enquiryCartBody"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span class="text-muted small">Selected Quantity:</span>
+        <strong id="enquiryCartCount">0 Bags</strong>
+      </div>
+      <div class="cart-summary-line mb-2">
+        <span class="text-muted small">Estimated Deal Total:</span>
+        <strong id="enquiryCartTotal" style="font-size: 1.15rem; color: var(--navy-primary);">₹0</strong>
+      </div>
+      <p class="small text-muted mb-3" style="font-size: 0.75rem;">*Back-to-school deal prices are for demonstration only. Submit an enquiry to confirm current store stock and combo offers.</p>
+      <div class="d-grid gap-2">
+        <a href="enquire.html?prefill=cart" id="sendEnquiryCartBtn" class="btn-brand-primary">SEND BAG ENQUIRY</a>
+        <button type="button" id="clearEnquiryCartBtn" class="btn-brand-secondary py-2" style="font-size: 0.8rem;">Clear Enquiry List</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         SECTION 2 – PREMIUM HERO SECTION (MAIN PRIORITY)
+         ====================================================================== -->
+    <section class="h2-hero-section" aria-labelledby="h2-hero-title">
+      <!-- Animated Ambient Orbs -->
+      <div class="h2-hero-orb h2-hero-orb-mint" aria-hidden="true"></div>
+      <div class="h2-hero-orb h2-hero-orb-lime" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="h2-hero-grid">
+          <!-- Left Column: Oversized Editorial Heading, Description, CTAs & 3 Highlights -->
+          <div class="h2-hero-copy">
+            <div class="h2-hero-label">
+              <span class="h2-hero-label-dot" aria-hidden="true"></span>
+              <span>COLORFUL BACK-TO-SCHOOL COLLECTION</span>
+            </div>
+
+            <h1 id="h2-hero-title" class="h2-hero-heading">
+              Your Favourite Packs, <span class="text-mint-accent">Built For</span> <span class="text-lime-underline">Every Grade.</span>
+            </h1>
+
+            <p class="h2-hero-description">
+              Discover playful toddler bags, spine-safe orthopedic school backpacks, 16-inch laptop campus packs and sports daypacks with exciting back-to-school combo deals.
+            </p>
+
+            <div class="h2-hero-cta-row">
+              <a href="products.html" class="btn-h2-primary">
+                Explore Backpacks <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#signature-collection" class="btn-h2-secondary">
+                View Signature Deals
+              </a>
+            </div>
+
+            <!-- Three Small Highlights -->
+            <div class="h2-hero-highlights" role="list" aria-label="Collection Highlights">
+              <div class="h2-highlight-chip" role="listitem">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <span>Ergonomic Spine Support</span>
+              </div>
+              <div class="h2-highlight-chip" role="listitem">
+                <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+                <span>Sorted by Age &amp; Type</span>
+              </div>
+              <div class="h2-highlight-chip" role="listitem">
+                <i class="bi bi-tags-fill" aria-hidden="true"></i>
+                <span>Back-to-School Deals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Photography + Floating Category Cards + Glassmorphism Card -->
+          <div class="h2-hero-stage">
+            <!-- Decorative Sunny-Yellow Element -->
+            <div class="h2-lime-corner-badge">
+              <i class="bi bi-backpack2"></i> Smart Packs. Bold Colors. Every Grade.
+            </div>
+
+            <!-- Main Editorial Backpack Photography -->
+            <div class="h2-hero-main-photo">
+              <img src="assets/images/veg-paratha.webp" alt="Editorial showcase of colorful school bags, 4-in-1 combo sets, trolley packs and college laptop backpacks" width="900" height="720">
+            </div>
+
+            <!-- Floating Category Card 1 -->
+            <a href="products.html?category=Kids%20(Ages%203-7)" class="h2-floating-cat-card h2-float-top-left">
+              <span class="h2-floating-cat-thumb">
+                <img src="assets/images/frozen-samosa.webp" alt="Kids Backpacks" width="84" height="84">
+              </span>
+              <span class="h2-floating-cat-meta">
+                <strong>Kids (Ages 3–7)</strong>
+                <span>3D &amp; Pastel Packs &rarr;</span>
+              </span>
+            </a>
+
+            <!-- Floating Category Card 2 -->
+            <a href="products.html?category=School%20(Ages%208-13)" class="h2-floating-cat-card h2-float-mid-right">
+              <span class="h2-floating-cat-thumb">
+                <img src="assets/images/malabar-paratha.webp" alt="Orthopedic School Bags" width="84" height="84">
+              </span>
+              <span class="h2-floating-cat-meta">
+                <strong>School (Ages 8–13)</strong>
+                <span>Ortho &amp; Trolley Bags &rarr;</span>
+              </span>
+            </a>
+
+            <!-- Glassmorphism Information Card -->
+            <div class="h2-glass-info-card">
+              <div class="d-flex align-items-center gap-3">
+                <span class="d-inline-flex align-items-center justify-content-center rounded" style="width: 42px; height: 42px; background-color: rgba(255, 46, 99, 0.25); color: var(--lime-accent); font-size: 1.25rem;">
+                  <i class="bi bi-patch-check-fill"></i>
+                </span>
+                <div class="h2-glass-info-text">
+                  <strong>Authorized Multi-Brand Backpack Store</strong>
+                  <span>Kids, Primary, High School, College &amp; Sports Range</span>
+                </div>
+              </div>
+              <a href="brands.html" class="btn-brand-mint py-2 px-3" style="font-size: 0.78rem;">Brands</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3 – PREMIUM QUICK PICKS SECTION
+         ====================================================================== -->
+    <section class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="h2-quick-picks-heading">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <span class="eyebrow-badge"><i class="bi bi-lightning-charge-fill"></i> Shop By Age &amp; Style</span>
+            <h2 id="h2-quick-picks-heading" class="mb-2">Colorful Bags for Every Stage</h2>
+            <p class="mb-0" style="max-width: 620px;">
+              Explore our four core backpack collections crafted to bring ergonomic comfort and vibrant organization to every student's routine.
+            </p>
+          </div>
+          <a href="products.html" class="btn-brand-secondary">View Complete Catalogue</a>
+        </div>
+
+        <div class="h2-quick-picks-grid" data-h2-stagger>
+          <!-- Card 1: Kids (Ages 3-7) -->
+          <article class="h2-quick-card">
+            <div class="h2-quick-card-media">
+              <img src="assets/images/frozen-snacks.webp" alt="Kids (Ages 3-7) collection featuring playful 3D cartoon and pastel mini backpacks" loading="lazy" width="600" height="450">
+              <span class="h2-quick-card-badge">Ages 3–7</span>
+            </div>
+            <div class="h2-quick-card-body">
+              <div>
+                <h3 class="h2-quick-card-title">Kids &amp; Preschool Bags</h3>
+                <p class="h2-quick-card-desc">
+                  3D dinosaur hardshells, pastel unicorn bags, astronaut daypacks and plush animal packs with chest clips for little learners.
+                </p>
+              </div>
+              <a href="products.html?category=Kids%20(Ages%203-7)" class="h2-explore-link">
+                Explore Category <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: School (Ages 8-13) -->
+          <article class="h2-quick-card">
+            <div class="h2-quick-card-media">
+              <img src="assets/images/plain-paratha.webp" alt="School (Ages 8-13) collection featuring ergonomic S-curve bookbags and trolley packs" loading="lazy" width="600" height="450">
+              <span class="h2-quick-card-badge">Ages 8–13</span>
+            </div>
+            <div class="h2-quick-card-body">
+              <div>
+                <h3 class="h2-quick-card-title">Primary &amp; Middle School</h3>
+                <p class="h2-quick-card-desc">
+                  Orthopedic S-curve bookbags, 6-wheel stair-climbing trolleys, waterproof ripstop packs and 4-in-1 combo sets with lunch totes.
+                </p>
+              </div>
+              <a href="products.html?category=School%20(Ages%208-13)" class="h2-explore-link">
+                Explore Category <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Teens & College -->
+          <article class="h2-quick-card">
+            <div class="h2-quick-card-media">
+              <img src="assets/images/frozen-vegetables.webp" alt="Teens & College collection featuring 16-inch laptop backpacks and roll-top rucksacks" loading="lazy" width="600" height="450">
+              <span class="h2-quick-card-badge">Ages 14+</span>
+            </div>
+            <div class="h2-quick-card-body">
+              <div>
+                <h3 class="h2-quick-card-title">Teens &amp; College Packs</h3>
+                <p class="h2-quick-card-desc">
+                  16" shockproof laptop backpacks, USB charging commuter bags, vintage canvas roll-tops and bold colorblock campus daypacks.
+                </p>
+              </div>
+              <a href="products.html?category=Teens%20%26%20College" class="h2-explore-link">
+                Explore Category <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Sports & Daypacks -->
+          <article class="h2-quick-card">
+            <div class="h2-quick-card-media">
+              <img src="assets/images/frozen-nonveg.webp" alt="Sports & Daypacks collection featuring athletic gym backpacks and field trip rucksacks" loading="lazy" width="600" height="450">
+              <span class="h2-quick-card-badge">All Ages</span>
+            </div>
+            <div class="h2-quick-card-body">
+              <div>
+                <h3 class="h2-quick-card-title">Sports &amp; Activity Bags</h3>
+                <p class="h2-quick-card-desc">
+                  Shoe-tunnel gym backpacks, 35L excursion rucksacks, waterproof PE drawstring sackpacks, thermal lunch bags and foldable daypacks.
+                </p>
+              </div>
+              <a href="products.html?category=Sports%20%26%20Daypacks" class="h2-explore-link">
+                Explore Category <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4 – SIGNATURE COLLECTION SECTION
+         ====================================================================== -->
+    <section id="signature-collection" class="section-block section-bg-mint reveal-on-scroll" aria-labelledby="h2-signature-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 680px;">
+          <span class="eyebrow-badge"><i class="bi bi-award-fill"></i> Signature Back-to-School Collection</span>
+          <h2 id="h2-signature-heading">Bestselling Bags Loved by Students</h2>
+          <p class="mb-0">
+            Explore six signature school bags and backpacks celebrated for their ergonomic comfort, vibrant colors and everyday durability.
+          </p>
+        </div>
+
+        <div class="h2-signature-grid" data-h2-stagger>
+          <!-- 1. DinoRoar 3D Toddler Backpack -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/frozen-samosa.webp" alt="DinoRoar 3D Toddler Backpack with hardshell front and chest buckle" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">Kids (Ages 3-7)</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">DinoRoar 3D Toddler Backpack</h3>
+                <p class="h2-signature-desc">
+                  Playful 3D dinosaur hardshell mini pack with breathable mesh straps, non-slip sternum clip and wipe-clean snack compartment.
+                </p>
+              </div>
+              <a href="products.html?category=Kids%20(Ages%203-7)" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. StarUnicorn Pastel School Bag -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/chicken-nuggets.webp" alt="StarUnicorn Pastel School Bag with matching pencil pouch" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">Kids (Ages 3-7)</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">StarUnicorn Pastel School Bag</h3>
+                <p class="h2-signature-desc">
+                  Water-resistant rainbow-pastel junior school bag with twin bottle sleeves, easy-grip zipper pulls and clip-on stationery pouch.
+                </p>
+              </div>
+              <a href="products.html?category=Kids%20(Ages%203-7)" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. GlideWheel 6-Wheel Trolley Bag -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/aloo-paratha.webp" alt="GlideWheel 6-Wheel Trolley Bag for effortless stair climbing" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">School (Ages 8-13)</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">GlideWheel 6-Wheel Trolley Bag</h3>
+                <p class="h2-signature-desc">
+                  Stair-climbing 6-wheel school trolley backpack with telescopic aluminum handle, rain cover and 3 roomy A4 book chambers.
+                </p>
+              </div>
+              <a href="products.html?category=School%20(Ages%208-13)" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. AeroMesh 3-Compartment Bookbag -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/malabar-paratha.webp" alt="AeroMesh 3-Compartment Bookbag with breathable back padding" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">School (Ages 8-13)</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">AeroMesh 3-Compartment Bookbag</h3>
+                <p class="h2-signature-desc">
+                  Breathable honeycomb-back middle school pack with dedicated lunchbox sleeve, multi-pocket organizer and compression straps.
+                </p>
+              </div>
+              <a href="products.html?category=School%20(Ages%208-13)" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. UrbanTech 16" Laptop Campus Pack -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/spring-rolls.webp" alt="UrbanTech 16-inch Laptop Campus Pack with USB port" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">Teens &amp; College</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">UrbanTech 16" Laptop Campus Pack</h3>
+                <p class="h2-signature-desc">
+                  Dual-tone college backpack with shockproof 16-inch laptop vault, external USB port and hidden anti-theft back pocket.
+                </p>
+              </div>
+              <a href="products.html?category=Teens%20%26%20College" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. HydroSprint Sports & Gym Backpack -->
+          <article class="h2-signature-card">
+            <div class="h2-signature-media">
+              <img src="assets/images/chicken-kebab.webp" alt="HydroSprint Sports & Gym Backpack with ventilated shoe tunnel" loading="lazy" width="600" height="420">
+              <span class="h2-signature-cat-pill">Sports &amp; Daypacks</span>
+            </div>
+            <div class="h2-signature-body">
+              <div>
+                <h3 class="h2-signature-title">HydroSprint Sports &amp; Gym Backpack</h3>
+                <p class="h2-signature-desc">
+                  Active sports backpack featuring a separate ventilated shoe tunnel, wet-kit compartment and expandable ball/helmet cord.
+                </p>
+              </div>
+              <a href="products.html?category=Sports%20%26%20Daypacks" class="btn-brand-primary w-100">
+                View Backpack <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5 – WHY CHOOSE US SECTION
+         ====================================================================== -->
+    <section class="section-block section-bg-white reveal-on-scroll" aria-labelledby="h2-why-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 660px;">
+          <span class="eyebrow-badge"><i class="bi bi-check2-circle"></i> The ZIPPACK Advantage</span>
+          <h2 id="h2-why-heading">Ergonomic Design Meets Bold Style</h2>
+          <p class="mb-0">
+            Designed around active school routines so students carry books, laptops and sports gear with zero shoulder strain.
+          </p>
+        </div>
+
+        <div class="h2-why-grid" data-h2-stagger>
+          <!-- Block 1 -->
+          <div class="h2-why-card">
+            <div class="h2-why-icon-wrap" aria-hidden="true">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3>Orthopedic Spine Comfort</h3>
+            <p class="small mb-0">
+              Contoured S-curve shoulder straps, sternum clips and air-mesh lumbar cushions reduce pressure on growing backs.
+            </p>
+          </div>
+
+          <!-- Block 2 -->
+          <div class="h2-why-card">
+            <div class="h2-why-icon-wrap" aria-hidden="true">
+              <i class="bi bi-grid-3x3-gap"></i>
+            </div>
+            <h3>Organized by Age &amp; Type</h3>
+            <p class="small mb-0">
+              Filter seamlessly across Kids (Ages 3–7), School (Ages 8–13), Teens &amp; College laptop packs and Sports &amp; Daypacks.
+            </p>
+          </div>
+
+          <!-- Block 3 -->
+          <div class="h2-why-card">
+            <div class="h2-why-icon-wrap" aria-hidden="true">
+              <i class="bi bi-umbrella"></i>
+            </div>
+            <h3>All-Weather Protection</h3>
+            <p class="small mb-0">
+              High-density water-repellent fabrics, rust-free zippers and integrated neon rain covers keep books and gadgets safe.
+            </p>
+          </div>
+
+          <!-- Block 4 -->
+          <div class="h2-why-card">
+            <div class="h2-why-icon-wrap" aria-hidden="true">
+              <i class="bi bi-bag-check"></i>
+            </div>
+            <h3>Simple Deal Enquiry</h3>
+            <p class="small mb-0">
+              Build your bag enquiry list online and connect with our store team on our dedicated Enquire page for combo and bulk deals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6 – LIFESTYLE / STUDENT EXPERIENCE SECTION (SPLIT LAYOUT)
+         ====================================================================== -->
+    <section class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="h2-lifestyle-heading">
+      <div class="container">
+        <div class="h2-lifestyle-split">
+          <!-- Left: Large Student Backpack Preparation Image -->
+          <div class="h2-lifestyle-media-frame">
+            <img src="assets/images/meal-preparation.webp" alt="Colorful school bags and organized stationery compartments ready for school mornings" loading="lazy" width="800" height="550">
+            <span class="h2-lifestyle-tag"><i class="bi bi-backpack2 me-1"></i> Stress-Free School Mornings</span>
+          </div>
+
+          <!-- Right: Heading, Description & CTA -->
+          <div>
+            <span class="eyebrow-badge-mint">Smart Daily Organization</span>
+            <h2 id="h2-lifestyle-heading" class="mb-3">Pack Faster. Carry Lighter.</h2>
+            <p class="mb-4">
+              Make every school morning smoother with backpacks engineered around real student routines. From dedicated A4 book dividers and leak-proof lunch sleeves to shockproof 16-inch laptop vaults, every pocket has a purpose so nothing gets lost at the bottom of the bag.
+            </p>
+
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded border">
+                  <strong class="d-block mb-1" style="font-family: var(--font-heading); color: var(--navy-primary);">Primary &amp; Middle School</strong>
+                  <span class="small text-muted">Balanced multi-chamber bookbags and stair-climbing trolleys for heavy timetables.</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded border">
+                  <strong class="d-block mb-1" style="font-family: var(--font-heading); color: var(--navy-primary);">Campus, Sports &amp; Trips</strong>
+                  <span class="small text-muted">Tech-ready laptop packs, shoe-tunnel gym bags and rugged excursion rucksacks.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="products.html" class="btn-brand-primary">
+              Explore All Backpacks <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7 – PARTNER BRANDS HIGHLIGHT BANNER
+         ====================================================================== -->
+    <section class="section-block section-bg-mint reveal-on-scroll" aria-labelledby="h2-storage-banner-heading">
+      <div class="container">
+        <div class="h2-storage-banner">
+          <div class="h2-storage-banner-grid">
+            <div class="h2-storage-banner-content">
+              <span class="eyebrow-badge"><i class="bi bi-patch-check-fill"></i> Authorized Brand Partners</span>
+              <h2 id="h2-storage-banner-heading" class="mb-3">Trusted Brands Under One Roof</h2>
+              <p class="mb-4">
+                Explore our official partner brands across pediatric orthopedic bags, heavy-duty trolleys, anti-theft college packs and outdoor rucksacks—all backed by manufacturer warranty and in-store care support.
+              </p>
+              <div>
+                <a href="brands.html" class="btn-h2-primary">
+                  Explore Partner Brands <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="h2-storage-banner-media">
+              <img src="assets/images/freezer-storage.webp" alt="Showroom display of authorized school bag and backpack brands" loading="lazy" width="750" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 8 – CUSTOMER EXPERIENCE SECTION
+         ====================================================================== -->
+    <section class="section-block section-bg-white reveal-on-scroll" aria-labelledby="h2-customer-exp-heading">
+      <div class="container">
+        <div class="row align-items-center g-4 mb-4">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge"><i class="bi bi-smile"></i> Built Around Students &amp; Parents</span>
+            <h2 id="h2-customer-exp-heading" class="mb-2">Your Back-to-School Shopping Companion</h2>
+            <p class="mb-0">
+              We focus on age-wise bag sizing, transparent capacity specs, genuine brand warranties and fast enquiry support for parents and schools.
+            </p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a href="enquire.html" class="btn-brand-secondary">Send a Bag Enquiry</a>
+          </div>
+        </div>
+
+        <div class="h2-experience-grid" data-h2-stagger>
+          <!-- Highlight 1 -->
+          <div class="h2-experience-card">
+            <span class="h2-experience-num">01</span>
+            <div>
+              <h3>Back-to-School Combo Deals</h3>
+              <p class="small mb-0">
+                Save up to 40% on curated backpack bundles including matching insulated lunch bags, pencil pouches and rain covers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="h2-experience-card">
+            <span class="h2-experience-num">02</span>
+            <div>
+              <h3>Age-Appropriate Ergonomics</h3>
+              <p class="small mb-0">
+                Every bag is clearly tagged by liter capacity (10L to 35L) and recommended age group so children never carry oversized packs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="h2-experience-card">
+            <span class="h2-experience-num">03</span>
+            <div>
+              <h3>Multi-Brand Comparison</h3>
+              <p class="small mb-0">
+                Compare SkyStride, ErgoKidz, UrbanVault, TrailPeak, KiddoPop and AeroRoll side by side with verified brand warranties.
+              </p>
+            </div>
+          </div>
+
+          <!-- Highlight 4 -->
+          <div class="h2-experience-card">
+            <span class="h2-experience-num">04</span>
+            <div>
+              <h3>Dedicated Enquire Page</h3>
+              <p class="small mb-0">
+                Add bags to your Enquiry List and prefill our dedicated Enquire page automatically to check store stock, combo deals or bulk school orders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 9 – FINAL CTA SECTION
+         ====================================================================== -->
+    <section class="h2-final-cta-section reveal-on-scroll" aria-labelledby="h2-final-cta-heading">
+      <div class="container">
+        <div class="mx-auto" style="max-width: 680px;">
+          <span class="eyebrow-badge"><i class="bi bi-backpack2-fill"></i> Start Exploring</span>
+          <h2 id="h2-final-cta-heading" class="mb-3">Ready to Find the Perfect School Bag?</h2>
+          <p class="mb-4" style="color: var(--text-main); font-size: 1.08rem;">
+            Explore our colorful school bag &amp; backpack catalogue by age and type, or send us an enquiry for back-to-school deals.
+          </p>
+          <a href="products.html" class="btn-brand-primary px-4 py-3">
+            Browse All Backpacks <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SECTION 11 – GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand Column + Social Icons -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">
+            <span class="brand-logo-mark" style="background-color: var(--mint-secondary); color: #FFFFFF;" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+                <path d="M8 10h8"/>
+              </svg>
+            </span>
+            <span class="brand-logo-text">
+              <span class="brand-logo-title text-white">ZIPPACK</span>
+            </span>
+          </a>
+          <p class="small mb-3" style="color: rgba(255,255,255,0.8); max-width: 340px;">
+            Colorful school bags and ergonomic backpacks built for every age and grade. Explore toddler packs, orthopedic bookbags, college laptop bags and sports daypacks.
+          </p>
+          <div class="contact-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp" title="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube" title="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)" title="X (Twitter)">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
+          </ul>
+        </div>
+
+        <!-- Shop by Age & Type -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-title">Shop by Age &amp; Type</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Kids%20(Ages%203-7)">Kids (Ages 3–7)</a></li>
+            <li><a href="products.html?category=School%20(Ages%208-13)">School (Ages 8–13)</a></li>
+            <li><a href="products.html?category=Teens%20%26%20College">Teens &amp; College</a></li>
+            <li><a href="products.html?category=Sports%20%26%20Daypacks">Sports &amp; Daypacks</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Placeholders -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-title">Store Info (Placeholders)</h3>
+          <ul class="footer-links small" style="color: rgba(255,255,255,0.8);">
+            <li><i class="bi bi-telephone me-2" style="color: var(--mint-secondary);"></i>[Phone: +91 98765 43210]</li>
+            <li><i class="bi bi-envelope me-2" style="color: var(--mint-secondary);"></i>[store@zippackbags.example]</li>
+            <li><i class="bi bi-geo-alt me-2" style="color: var(--mint-secondary);"></i>[Rainbow Arcade, T. Nagar, Chennai]</li>
+            <li class="mt-2"><a href="enquire.html" style="color: var(--lime-accent); font-weight: 600;">Submit Bag Enquiry &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ZIPPACK. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="storage-delivery.html#faq-section" class="text-white-50">Delivery &amp; Care FAQs</a>
+          <a href="brands.html#faq-section" class="text-white-50">Brand Warranty FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main & Home 2 Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home-2.js"></script>
+</body>
+</html>

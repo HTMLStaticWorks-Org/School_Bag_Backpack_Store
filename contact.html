@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Store Info | ZIPPACK — School Bag &amp; Backpack Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Visit the ZIPPACK flagship school bag &amp; backpack showroom. View our store address, operating hours, phone numbers, in-store fitting services and map.">
+  <meta property="og:title" content="Contact &amp; Store Info | ZIPPACK — School Bag &amp; Backpack Store">
+  <meta property="og:description" content="Find our store address, showroom hours, department contact info and interactive map.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-frozen-food.webp">
+
+  <!-- Google Fonts: Outfit (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Global Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       GLOBAL STICKY HEADER
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="ZIPPACK Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+              <path d="M8 10h8"/>
+            </svg>
+          </span>
+          <span class="brand-logo-text">
+            <span class="brand-logo-title">ZIPPACK</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="home-2.html" class="nav-link-item">Home 2</a></li>
+            <li><a href="products.html" class="nav-link-item">Products</a></li>
+            <li><a href="brands.html" class="nav-link-item">Brands</a></li>
+            <li><a href="storage-delivery.html" class="nav-link-item">Care &amp; Delivery</a></li>
+            <li><a href="contact.html" class="nav-link-item active" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="icon-action-btn" id="headerSearchToggleBtn" aria-expanded="false" aria-controls="headerSearchBar" aria-label="Toggle product search" title="Search Backpacks">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="rtlToggleBtn" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout direction" title="Toggle RTL / LTR">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="themeToggleBtn" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme" title="Toggle Dark / Light Mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" data-open-cart aria-label="Open Bag Enquiry Cart" title="Bag Enquiry List">
+            <i class="bi bi-bag-check"></i>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <a href="enquire.html" class="btn-brand-primary header-cta-desktop">Enquire Now</a>
+
+          <button type="button" class="hamburger-btn" id="mobileMenuOpenBtn" aria-expanded="false" aria-controls="mobileNavDrawer" aria-label="Open navigation menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-search-bar" id="headerSearchBar">
+      <div class="container">
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label for="headerSearchInput" class="visually-hidden">Search school bags and backpacks</label>
+          <input type="search" id="headerSearchInput" class="header-search-input" placeholder="Search toddler bags, orthopedic school packs, laptop backpacks, trolley bags...">
+          <button type="submit" class="btn-brand-primary py-2 px-3">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-backdrop" id="sharedOverlayBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <span class="fw-bold" style="font-family: var(--font-heading); color: var(--navy-primary);">STORE NAVIGATION</span>
+        <button type="button" class="drawer-close-btn" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-tools">
+        <form class="mobile-drawer-search-form" data-drawer-search-form role="search">
+          <input type="search" class="mobile-drawer-search-input" placeholder="Search school bags..." aria-label="Search school bags and backpacks">
+          <button type="submit" class="btn-brand-primary py-2 px-3" aria-label="Submit search"><i class="bi bi-search"></i></button>
+        </form>
+        <div class="mobile-drawer-actions-grid">
+          <button type="button" class="mobile-drawer-action-item" data-open-cart aria-label="Open Bag Enquiry Cart">
+            <i class="bi bi-bag-check"></i>
+            <span>Bag List</span>
+            <span class="cart-count-badge">0</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme">
+            <i class="bi bi-moon-stars"></i>
+            <span>Theme</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html"><span>Home</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="home-2.html"><span>Home 2</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="products.html"><span>Products</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="brands.html"><span>Brands</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="storage-delivery.html"><span>Care &amp; Delivery</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="contact.html" class="active"><span>Contact</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="enquire.html"><span>Enquire Now</span> <i class="bi bi-arrow-up-right-circle"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="small mb-2 fw-semibold" style="color: var(--navy-primary);">COLORFUL CARRY. BACK-TO-SCHOOL READY.</p>
+      <a href="products.html" class="btn-brand-primary w-100">Explore Backpack Range</a>
+    </div>
+  </aside>
+
+  <!-- Enquiry Cart Slide-Over Drawer -->
+  <aside class="enquiry-cart-drawer" id="enquiryCartDrawer" aria-hidden="true" aria-label="Bag Enquiry List">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill" style="color: var(--mint-secondary); font-size: 1.2rem;"></i>
+        <h3>Bag Enquiry List</h3>
+      </div>
+      <button type="button" class="drawer-close-btn" id="enquiryCartCloseBtn" aria-label="Close enquiry cart">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="enquiryCartBody"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span class="text-muted small">Selected Quantity:</span>
+        <strong id="enquiryCartCount">0 Bags</strong>
+      </div>
+      <div class="cart-summary-line mb-2">
+        <span class="text-muted small">Estimated Deal Total:</span>
+        <strong id="enquiryCartTotal" style="font-size: 1.15rem; color: var(--navy-primary);">₹0</strong>
+      </div>
+      <p class="small text-muted mb-3" style="font-size: 0.75rem;">*Back-to-school deal prices are for demonstration only. Submit an enquiry to confirm current store stock and combo offers.</p>
+      <div class="d-grid gap-2">
+        <a href="enquire.html?prefill=cart" id="sendEnquiryCartBtn" class="btn-brand-primary">SEND BAG ENQUIRY</a>
+        <button type="button" id="clearEnquiryCartBtn" class="btn-brand-secondary py-2" style="font-size: 0.8rem;">Clear Enquiry List</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         CONTACT PAGE HERO BANNER (STANDARDIZED HEIGHT ACROSS ALL NON-HOME PAGES)
+         ====================================================================== -->
+    <section class="page-hero-banner" aria-labelledby="contact-hero-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 col-md-7">
+            <span class="eyebrow-badge"><i class="bi bi-shop"></i> Store Information &amp; Showroom Support</span>
+            <h1 id="contact-hero-heading">VISIT OUR BACKPACK STORE OR GET IN TOUCH.</h1>
+            <p>
+              Explore our flagship store address, operating hours, in-store backpack fitting zones and department contact details below.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-5 text-md-end">
+            <a href="enquire.html" class="btn-brand-mint">
+              <i class="bi bi-pencil-square"></i> Send Quick Enquiry
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         STORE CONTACT DETAILS & SHOWROOM DIRECTORY
+         ====================================================================== -->
+    <section id="orderEnquiryFormSection" class="section-block section-bg-ice" aria-labelledby="store-info-heading">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <!-- LEFT COLUMN: Editable Client Store Contact Details -->
+          <div class="col-lg-5">
+            <div class="contact-info-card">
+              <span class="eyebrow-badge mb-3">Store Details (Editable Client Placeholders)</span>
+              <h2 class="text-white mb-3" style="font-size: 1.65rem;">GET IN TOUCH WITH OUR STORE.</h2>
+              <p class="small mb-4">
+                Call, email or walk into our flagship showroom to explore our colorful range of kids' bags, orthopedic bookbags, 16" laptop packs and sports daypacks.
+              </p>
+
+              <!-- 1. Store Helpline Number Placeholder -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-telephone"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Store Phone &amp; WhatsApp Desk</h3>
+                  <p class="mb-0 small text-white">[Client Placeholder: +91 98765 43210 / 044-2815-XXXX]</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Direct retail &amp; back-to-school deal helpline</span>
+                </div>
+              </div>
+
+              <!-- 2. Business Email Placeholder -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-envelope"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Store &amp; Bulk Order Email</h3>
+                  <p class="mb-0 small text-white">[Client Placeholder: store@zippackbags.example]</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Customer support &amp; institutional bulk desk</span>
+                </div>
+              </div>
+
+              <!-- 3. Flagship Store Address Placeholder -->
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Flagship Showroom Address</h3>
+                  <p class="mb-0 small text-white">[Client Placeholder: Shop No. 42, Rainbow Arcade, Usman Road, T. Nagar, Chennai, Tamil Nadu &ndash; 600017]</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Landmark: Opposite Panagal Park Main Gate</span>
+                </div>
+              </div>
+
+              <!-- 4. Operating Hours Placeholder -->
+              <div class="contact-detail-item border-bottom-0 pb-0">
+                <div class="contact-detail-icon" aria-hidden="true"><i class="bi bi-clock"></i></div>
+                <div>
+                  <h3 class="mb-1" style="font-size: 0.96rem; color: var(--lime-accent);">Showroom Operating Hours</h3>
+                  <p class="mb-0 small text-white">[Client Placeholder: Monday &ndash; Sunday: 10:00 AM to 9:00 PM]</p>
+                  <span class="small" style="color: rgba(255,255,255,0.65); font-size: 0.78rem;">Open all 7 days during Back-to-School season</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top" style="border-color: rgba(255,255,255,0.16) !important;">
+                <h3 class="mb-2" style="font-size: 0.92rem; color: var(--lime-accent); text-transform: uppercase; letter-spacing: 0.05em;">Connect on Social Media</h3>
+                <p class="small mb-3" style="color: rgba(255,255,255,0.75);">Follow us for new backpack drops, back-to-school combo offers and ergonomic packing tips.</p>
+                <div class="contact-social-links mb-4">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow us on Instagram" title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow us on Facebook" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Chat with us on WhatsApp" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Subscribe on YouTube" title="YouTube">
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                  <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow us on X (Twitter)" title="X (Twitter)">
+                    <i class="bi bi-twitter-x"></i>
+                  </a>
+                </div>
+                <a href="enquire.html" class="btn-brand-mint w-100">
+                  <i class="bi bi-bag-heart-fill"></i> Go to Dedicated Enquire Form Page
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Store Information, Showroom Zones & Visitor Facilities -->
+          <div class="col-lg-7">
+            <div class="enquiry-form-card">
+              <span class="eyebrow-badge-mint">Flagship Showroom &amp; Store Directory</span>
+              <h2 id="store-info-heading" class="mb-2" style="font-size: 1.75rem;">IN-STORE EXPERIENCE &amp; STORE INFO</h2>
+              <p class="small mb-4">
+                Our 3,500 sq. ft. colorful multi-brand showroom is organized by student age group and carry type so parents and students can test strap comfort, compare liter capacities and check laptop fit in person.
+              </p>
+
+              <!-- 4 Showroom Department Cards -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="p-3 rounded border bg-light h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge" style="background-color: var(--navy-primary);">Zone 01</span>
+                      <h3 class="mb-0" style="font-size: 1rem;">Kids &amp; Ortho Fitting Bar</h3>
+                    </div>
+                    <p class="small mb-0">
+                      Complimentary posture and shoulder-strap fitting for Preschool (Ages 3–7) and Primary/Middle School (Ages 8–13) orthopedic bookbags.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="p-3 rounded border bg-light h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge" style="background-color: var(--navy-primary);">Zone 02</span>
+                      <h3 class="mb-0" style="font-size: 1rem;">Campus Laptop &amp; Trolley Bay</h3>
+                    </div>
+                    <p class="small mb-0">
+                      Test 15.6" and 16" laptop sleeves, anti-theft commuter packs and 6-wheel stair-climbing trolley backpacks on our sample stair ramp.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="p-3 rounded border bg-light h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge" style="background-color: var(--navy-primary);">Zone 03</span>
+                      <h3 class="mb-0" style="font-size: 1rem;">Warranty &amp; Zipper Care Desk</h3>
+                    </div>
+                    <p class="small mb-0">
+                      On-the-spot slider, buckle and strap-webbing assistance plus authorized warranty registration for all six partner backpack brands.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="p-3 rounded border bg-light h-100">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge" style="background-color: var(--navy-primary);">Zone 04</span>
+                      <h3 class="mb-0" style="font-size: 1rem;">School &amp; Bulk Order Lounge</h3>
+                    </div>
+                    <p class="small mb-0">
+                      Dedicated sample room for school principals, PTA committees and event organizers looking for custom-logo backpacks in bulk.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Store Amenities & Visitor Information -->
+              <div class="p-3 rounded border mb-4" style="background-color: var(--bg-soft-mint); border-color: var(--border-color) !important;">
+                <h3 class="mb-2" style="font-size: 1.05rem;">Visitor Facilities &amp; Store Policies</h3>
+                <div class="row g-2 small" style="color: var(--text-main);">
+                  <div class="col-sm-6"><i class="bi bi-car-front-fill me-2" style="color: var(--mint-secondary);"></i><strong>Parking:</strong> Free Basement Car &amp; Two-Wheeler Parking</div>
+                  <div class="col-sm-6"><i class="bi bi-credit-card-2-front-fill me-2" style="color: var(--mint-secondary);"></i><strong>Payments:</strong> UPI, Cards, NetBanking &amp; Cash Accepted</div>
+                  <div class="col-sm-6"><i class="bi bi-arrow-left-right me-2" style="color: var(--mint-secondary);"></i><strong>Size Exchange:</strong> 7-Day Unused Size/Color Exchange</div>
+                  <div class="col-sm-6"><i class="bi bi-bag-check-fill me-2" style="color: var(--mint-secondary);"></i><strong>Store Pickup:</strong> Reserve Online via Enquire Form</div>
+                </div>
+              </div>
+
+              <!-- CTA Row to Separate Enquire Form Page & Products Catalogue -->
+              <div class="p-3 rounded border bg-light small text-muted mb-3">
+                <i class="bi bi-info-circle me-1"></i>
+                <strong>Want to send a product, back-to-school deal or bulk enquiry?</strong> Head over to our dedicated <strong>Enquire</strong> page where you can submit your enquiry form with your selected backpacks prefilled.
+              </div>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <a href="enquire.html" class="btn-brand-primary w-100 py-3">
+                    OPEN ENQUIRE FORM <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+                <div class="col-sm-6">
+                  <a href="products.html" class="btn-brand-secondary w-100 py-3">
+                    BROWSE BACKPACKS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         STORE LOCATION INTERACTIVE MAP SECTION
+         ====================================================================== -->
+    <section id="storeLocationMapSection" class="section-block section-bg-mint" aria-labelledby="store-map-heading">
+      <div class="container">
+        <div class="contact-map-card">
+          <div class="contact-map-header">
+            <div>
+              <span class="eyebrow-badge mb-2"><i class="bi bi-geo-alt-fill"></i> Visit Our Flagship Showroom</span>
+              <h2 id="store-map-heading" class="mb-1" style="font-size: 1.6rem;">FIND OUR STORE ON THE MAP</h2>
+              <p class="small mb-0">
+                Walk in with your kids to try on ergonomic school bags, compare trolley models and grab exclusive back-to-school combo deals.
+              </p>
+            </div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-brand-primary">
+              <i class="bi bi-compass"></i> Open in Google Maps
+            </a>
+          </div>
+          <div class="contact-map-frame">
+            <iframe
+              title="ZIPPACK School Bag & Backpack Store Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.843984049967!2d80.2405!3d13.0475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526650e0b6c595%3A0x4f74ddbff946af6b!2sT.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">
+            <span class="brand-logo-mark" style="background-color: var(--mint-secondary); color: #FFFFFF;" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+                <path d="M8 10h8"/>
+              </svg>
+            </span>
+            <span class="brand-logo-text">
+              <span class="brand-logo-title text-white">ZIPPACK</span>
+            </span>
+          </a>
+          <p class="small mb-3" style="color: rgba(255,255,255,0.8); max-width: 340px;">
+            Colorful school bags and ergonomic backpacks built for every age and grade. Explore toddler packs, orthopedic bookbags, college laptop bags and sports daypacks.
+          </p>
+          <div class="contact-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp" title="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube" title="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)" title="X (Twitter)">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-title">Shop by Age &amp; Type</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Kids%20(Ages%203-7)">Kids (Ages 3–7)</a></li>
+            <li><a href="products.html?category=School%20(Ages%208-13)">School (Ages 8–13)</a></li>
+            <li><a href="products.html?category=Teens%20%26%20College">Teens &amp; College</a></li>
+            <li><a href="products.html?category=Sports%20%26%20Daypacks">Sports &amp; Daypacks</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-title">Store &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Store Info &amp; Hours</a></li>
+            <li><a href="enquire.html?prefill=cart">Bag &amp; Deal Enquiries</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery Guide</a></li>
+            <li><a href="brands.html">Partner Brands</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ZIPPACK. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="storage-delivery.html#faq-section" class="text-white-50">Delivery &amp; Care FAQs</a>
+          <a href="brands.html#faq-section" class="text-white-50">Brand Warranty FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

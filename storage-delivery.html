@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Care, Storage &amp; Delivery | ZIPPACK — School Bag &amp; Backpack Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Backpack care, locker storage and school delivery guide. Learn how to maintain ergonomic back padding, clean water-repellent fabrics and explore student doorstep delivery.">
+  <meta property="og:title" content="Care, Storage &amp; Delivery | ZIPPACK — School Bag &amp; Backpack Store">
+  <meta property="og:description" content="Maintain your backpack's ergonomic support and water-repellent finish. Explore our 5-point storage protocol, cleaning rules, and fast student delivery logistics.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/freezer-storage.webp">
+
+  <!-- Google Fonts: Outfit (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Global Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       GLOBAL STICKY HEADER
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="ZIPPACK Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+              <path d="M8 10h8"/>
+            </svg>
+          </span>
+          <span class="brand-logo-text">
+            <span class="brand-logo-title">ZIPPACK</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="home-2.html" class="nav-link-item">Home 2</a></li>
+            <li><a href="products.html" class="nav-link-item">Products</a></li>
+            <li><a href="brands.html" class="nav-link-item">Brands</a></li>
+            <li><a href="storage-delivery.html" class="nav-link-item active" aria-current="page">Care &amp; Delivery</a></li>
+            <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="icon-action-btn" id="headerSearchToggleBtn" aria-expanded="false" aria-controls="headerSearchBar" aria-label="Toggle product search" title="Search Backpacks">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="rtlToggleBtn" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout direction" title="Toggle RTL / LTR">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="themeToggleBtn" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme" title="Toggle Dark / Light Mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" data-open-cart aria-label="Open Bag Enquiry Cart" title="Bag Enquiry List">
+            <i class="bi bi-bag-check"></i>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <a href="enquire.html" class="btn-brand-primary header-cta-desktop">Enquire Now</a>
+
+          <button type="button" class="hamburger-btn" id="mobileMenuOpenBtn" aria-expanded="false" aria-controls="mobileNavDrawer" aria-label="Open navigation menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-search-bar" id="headerSearchBar">
+      <div class="container">
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label for="headerSearchInput" class="visually-hidden">Search school bags and backpacks</label>
+          <input type="search" id="headerSearchInput" class="header-search-input" placeholder="Search toddler bags, orthopedic school packs, laptop backpacks, trolley bags...">
+          <button type="submit" class="btn-brand-primary py-2 px-3">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-backdrop" id="sharedOverlayBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+            <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+            <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+            <path d="M8 10h8"/>
+          </svg>
+        </span>
+        <span class="brand-logo-text">
+          <span class="brand-logo-title">ZIPPACK</span>
+        </span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html"><span>Home</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="home-2.html"><span>Home 2</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="products.html"><span>Products</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="brands.html"><span>Brands</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="storage-delivery.html" class="active"><span>Care &amp; Delivery</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="enquire.html"><span>Enquire Now</span> <i class="bi bi-arrow-up-right-circle"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="small mb-2 fw-semibold" style="color: var(--navy-primary);">COLORFUL CARRY. BACK-TO-SCHOOL READY.</p>
+      <a href="products.html" class="btn-brand-primary w-100">Explore Backpack Range</a>
+    </div>
+  </aside>
+
+  <!-- Enquiry Cart Slide-Over Drawer -->
+  <aside class="enquiry-cart-drawer" id="enquiryCartDrawer" aria-hidden="true" aria-label="Bag Enquiry List">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill text-warning fs-5"></i>
+        <h2 class="h5 mb-0 text-white">Bag Enquiry List</h2>
+      </div>
+      <button type="button" class="drawer-close-btn" data-close-cart aria-label="Close enquiry cart">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerItemsList">
+      <!-- Populated dynamically via assets/js/main.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-white-50">Selected Items:</span>
+        <span class="fw-bold text-white fs-5" id="cartDrawerTotalCount">0 Bags</span>
+      </div>
+      <p class="cart-drawer-note mb-3">
+        Ready to check availability or request school bulk discounts? Proceed to our enquiry desk with your selected backpacks.
+      </p>
+      <div class="d-grid gap-2">
+        <a href="enquire.html?prefill=cart" class="btn-brand-mint w-100 py-2">
+          Proceed to Enquiry Desk <i class="bi bi-arrow-right"></i>
+        </a>
+        <button type="button" class="btn-brand-outline-white w-100 py-2" data-close-cart>
+          Continue Browsing
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         PAGE HERO BANNER (STANDARDIZED HEIGHT ACROSS ALL NON-HOME PAGES)
+         ====================================================================== -->
+    <section class="page-hero-banner" aria-labelledby="care-delivery-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 col-md-7">
+            <span class="eyebrow-badge"><i class="bi bi-box-seam-fill"></i> Backpack Maintenance &amp; Dispatch</span>
+            <h1 id="care-delivery-heading">BACKPACK CARE, STORAGE &amp; FAST STORE DELIVERY.</h1>
+            <p>
+              Keep ergonomic school bags, trolley packs and tech backpacks clean, water-resistant and long-lasting—plus explore our student doorstep delivery and institutional logistics.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-5 text-md-end">
+            <a href="contact.html" class="btn-brand-mint">
+              <i class="bi bi-geo-alt"></i> Store Pickup &amp; Delivery
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 1 – WHY PROPER STORAGE & CARE MATTERS
+         ====================================================================== -->
+    <section class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="storage-intro-heading">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6">
+            <span class="eyebrow-badge-mint">Backpack Longevity &amp; Posture Care</span>
+            <h2 id="storage-intro-heading" class="mb-3">PROPER STORAGE PRESERVES ERGONOMIC SHAPE &amp; SPINAL SUPPORT.</h2>
+            <p>
+              A school bag carries up to 8kg of heavy textbooks, lunchboxes, sports kits and tech gear daily. How you store, hang and ventilate a backpack after school hours directly affects how well its contoured EVA spine board and cushioned honeycomb shoulder straps protect your student's back.
+            </p>
+            <p class="mb-4">
+              Storing backpacks crushed beneath heavy storage bins or folding chairs can permanently warp internal spine plates and deform memory-foam cushioning. Follow our recommended practices to ensure your child's bag stays resilient, comfortable and posture-safe across 3+ school years.
+            </p>
+            <div class="p-3 rounded border bg-white d-flex align-items-start gap-3">
+              <i class="bi bi-shield-check fs-4" style="color: var(--mint-hover);"></i>
+              <div class="small">
+                <strong style="color: var(--navy-primary);">Ergonomic Shape Guarantee:</strong> Storing bags upright in ventilated spaces prevents foam compression, keeping S-curve straps aligned with growing spinal posture.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="rounded-3 overflow-hidden border border-3 border-white shadow-sm" style="aspect-ratio: 16 / 10; background-color: var(--navy-primary);">
+              <img src="assets/images/freezer-storage.webp" alt="Proper backpack locker storage, wall hook hanging and shape preservation display" class="w-100 h-100 object-fit-cover" width="800" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2 – THE 6-POINT BACKPACK CARE & STORAGE PROTOCOL
+         ====================================================================== -->
+    <section id="storage-guidance" class="section-block section-bg-mint reveal-on-scroll" aria-labelledby="care-protocol-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 680px;">
+          <span class="eyebrow-badge"><i class="bi bi-check2-all"></i> Daily &amp; Vacation Best Practices</span>
+          <h2 id="care-protocol-heading">THE 6-POINT BACKPACK STORAGE &amp; CARE PROTOCOL.</h2>
+          <p class="mb-0">
+            Simple, highly effective daily habits that keep your backpacks pristine, odorless, and structurally sound from kindergarten to college.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-handbag"></i></div>
+              <h3>1. Hang by Top Haul Loop</h3>
+              <p class="small mb-0">
+                Never hang a loaded school bag by its shoulder straps over doorknobs or coat hooks. Always use the reinforced top webbing carry handle to prevent stretching ergonomic strap padding and seam threads.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-wind"></i></div>
+              <h3>2. Air-Dry Before Closet Stowing</h3>
+              <p class="small mb-0">
+                Always unpack damp raincoats, moist swimsuits or gym kits immediately after school. Leave all zipper pockets fully unzipped in an airy space overnight before putting the bag away in a closet.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-grid-3x3-gap"></i></div>
+              <h3>3. Upright Cubby &amp; Locker Stacking</h3>
+              <p class="small mb-0">
+                Store backpacks upright or flat on dedicated cubby shelves. Never stack heavy trunks or cartons directly on top of 3D molded kids' packs or aluminum trolley wheel frames to avoid chassis distortion.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-tools"></i></div>
+              <h3>4. Zipper Track Clearance</h3>
+              <p class="small mb-0">
+                Playground sand, pencil shavings and eraser crumbs can cause zipper teeth to jam. Brush out SBS and YKK coil zippers with a soft dry toothbrush once a month, applying paraffin wax if tracks feel stiff.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-umbrella"></i></div>
+              <h3>5. Detachable Rainfly Care</h3>
+              <p class="small mb-0">
+                After rainy school commutes, remove the integrated neon rain cover from its bottom pouch. Shake off water droplets, air-dry in the shade completely, and fold back neatly to preserve waterproof PU coatings.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="storage-checklist-card">
+              <div class="why-feature-icon"><i class="bi bi-arrow-repeat"></i></div>
+              <h3>6. 6-Wheel Axle Wipe-Down</h3>
+              <p class="small mb-0">
+                For stair-climbing trolley bags, wipe polyurethane wheel axles every two weeks with a damp microfiber cloth to remove dirt, mud and street gravel, maintaining whisper-quiet rolling on school staircases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3 – CLEANING, WASHING & STAIN REMOVAL STANDARDS
+         ====================================================================== -->
+    <section class="section-block section-bg-white reveal-on-scroll" aria-labelledby="cleaning-guide-heading">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6 order-lg-2">
+            <span class="eyebrow-badge-mint">Safe Fabric Hygiene</span>
+            <h2 id="cleaning-guide-heading" class="mb-3">HOW TO CLEAN SCHOOL BAGS WITHOUT STRIPPING WATERPROOF COATINGS.</h2>
+            <p>
+              High-performance backpacks feature water-repellent polyurethane (PU) linings, reinforced stitch bonding, and high-density foam back panels. <strong>Never machine-wash or tumble-dry an ergonomic backpack.</strong> Mechanical spin cycles break internal backboards and dissolve water-repellent seals.
+            </p>
+            <div class="handling-step-list">
+              <div class="handling-step-item">
+                <div class="step-num-badge">A</div>
+                <div>
+                  <strong>Gentle Surface Wipe-Down:</strong> Mix lukewarm water with mild baby shampoo or gentle dish soap. Gently sponge down 600D/900D polyester exterior shells using a microfiber cloth.
+                </div>
+              </div>
+              <div class="handling-step-item">
+                <div class="step-num-badge">B</div>
+                <div>
+                  <strong>Spot-Treat Lunch &amp; Ink Spills:</strong> Blot lunchbox oil stains or ballpoint pen marks immediately with isopropyl rubbing alcohol on a cotton ball. Never use harsh chlorine bleach.
+                </div>
+              </div>
+              <div class="handling-step-item">
+                <div class="step-num-badge">C</div>
+                <div>
+                  <strong>Natural Shade Drying:</strong> Hang the backpack upside down in a shaded, well-ventilated patio or balcony. Keep away from intense direct sun or radiator heat to prevent fabric fading.
+                </div>
+              </div>
+              <div class="handling-step-item">
+                <div class="step-num-badge">D</div>
+                <div>
+                  <strong>Baking Soda Deodorizing:</strong> For sports and PE shoe pockets, sprinkle dry baking soda inside overnight, then vacuum or shake out in the morning to neutralize odors naturally.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-lg-1">
+            <div class="rounded-3 overflow-hidden border border-3 border-light shadow-sm" style="aspect-ratio: 16 / 11; background-color: var(--navy-primary);">
+              <img src="assets/images/freezer-handling.webp" alt="Care specialist demonstrating gentle cleaning, stain removal and zipper care on school backpack" class="w-100 h-100 object-fit-cover" width="800" height="550">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4 – STUDENT HOME DELIVERY & SCHOOL BULK DISPATCH
+         ====================================================================== -->
+    <section id="delivery-info" class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="delivery-info-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 680px;">
+          <span class="eyebrow-badge"><i class="bi bi-truck"></i> Fast Student Logistics</span>
+          <h2 id="delivery-info-heading">DOORSTEP DELIVERY &amp; INSTITUTIONAL BULK DISPATCH.</h2>
+          <p class="mb-0">
+            Whether you are ordering a single replacement backpack for Monday classes or 300 custom-branded sets for an entire academy grade, our delivery is fast, tracked, and protective.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="storage-checklist-card text-center h-100">
+              <div class="why-feature-icon mx-auto"><i class="bi bi-lightning-charge-fill"></i></div>
+              <h3>Same-Day Dispatch</h3>
+              <p class="small mb-0">
+                In-stock backpack orders placed before 2:00 PM are packed and handed over to express couriers the very same afternoon with SMS dispatch alerts.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="storage-checklist-card text-center h-100">
+              <div class="why-feature-icon mx-auto"><i class="bi bi-box2-heart-fill"></i></div>
+              <h3>Rigid Box Packaging</h3>
+              <p class="small mb-0">
+                Backpacks ship in reinforced corrugated cartons with silica gel packs and breathable dust covers. Bags are never folded or squashed in thin poly mailers.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="storage-checklist-card text-center h-100">
+              <div class="why-feature-icon mx-auto"><i class="bi bi-building-check"></i></div>
+              <h3>School Campus Drops</h3>
+              <p class="small mb-0">
+                For school bulk orders, we sort and label boxes by class grade, section, and student name, enabling organized distribution during school orientation week.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="storage-checklist-card text-center h-100">
+              <div class="why-feature-icon mx-auto"><i class="bi bi-arrow-left-right"></i></div>
+              <h3>14-Day Fit Exchange</h3>
+              <p class="small mb-0">
+                If the backpack doesn't fit your child's torso comfortably, exchange for a larger or smaller size within 14 days with free doorstep return pickup.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5 – STORAGE, CARE & DELIVERY FAQS
+         ====================================================================== -->
+    <section id="faq-section" class="section-block section-bg-mint reveal-on-scroll" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 660px;">
+          <span class="eyebrow-badge"><i class="bi bi-question-circle"></i> Helpful Care &amp; Shipping Answers</span>
+          <h2 id="faq-heading">FREQUENTLY ASKED QUESTIONS.</h2>
+          <p class="mb-0">
+            Answers to common parent and student questions regarding backpack care, cleaning, delivery timelines, and bulk school shipping.
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="accordion custom-accordion" id="storageFaqAccordion">
+              <!-- Item 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol1" aria-expanded="true" aria-controls="sFaqCol1">
+                    Can I wash my child's backpack in a standard washing machine?
+                  </button>
+                </h3>
+                <div id="sFaqCol1" class="accordion-collapse collapse show" aria-labelledby="sFaqHead1" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    We strongly recommend against machine washing. Modern orthopedic backpacks contain rigid internal EVA spine stays, molded back panels, and water-repellent inner coatings that get permanently creased, warped or stripped in washing machine agitators. Simply wipe down the fabric with a soft cloth dipped in lukewarm soapy water and hang to air-dry in the shade.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol2" aria-expanded="false" aria-controls="sFaqCol2">
+                    How do I maintain the water-repellent coating during the rainy season?
+                  </button>
+                </h3>
+                <div id="sFaqCol2" class="accordion-collapse collapse" aria-labelledby="sFaqHead2" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    After heavy downpours, wipe down the backpack's exterior with a dry towel and deploy the integrated rainfly. Never store a wet bag in a dark closet. Once or twice per school year, you can treat high-exposure outer seams with a PFC-free water-repellent fabric spray (available at our store desk) to maintain maximum water-beading performance.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol3" aria-expanded="false" aria-controls="sFaqCol3">
+                    How fast is student doorstep delivery across metro and regional areas?
+                  </button>
+                </h3>
+                <div id="sFaqCol3" class="accordion-collapse collapse" aria-labelledby="sFaqHead3" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    Standard local delivery takes 24 to 48 hours from dispatch. Express same-day courier service is available across metro zones for orders placed before 2:00 PM. Regional school shipments typically arrive within 3 to 4 business days. You will receive an SMS and email with real-time package tracking as soon as your box leaves our showroom dispatch center.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol4" aria-expanded="false" aria-controls="sFaqCol4">
+                    How are backpacks packaged to prevent shoulder straps from deforming?
+                  </button>
+                </h3>
+                <div id="sFaqCol4" class="accordion-collapse collapse" aria-labelledby="sFaqHead4" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    Unlike ordinary plastic mailer bags, we pack every backpack in a rigid double-wall corrugated cardboard box. The shoulder straps are laid flat with recyclable cardboard spacers, and internal compartments are supported with tissue stuffing and silica gel moisture absorbers so your bag arrives in showroom-fresh condition.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol5" aria-expanded="false" aria-controls="sFaqCol5">
+                    What is your exchange policy if the bag is too large or small for my child?
+                  </button>
+                </h3>
+                <div id="sFaqCol5" class="accordion-collapse collapse" aria-labelledby="sFaqHead5" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    We offer a 14-Day Ergonomic Fit Guarantee. If your child tries the backpack on at home and it feels too long for their torso or too bulky for their grade, you can request a size exchange. As long as original brand tags and hologram labels are intact, we arrange free courier pickup from your home.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="sFaqHead6">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sFaqCol6" aria-expanded="false" aria-controls="sFaqCol6">
+                    Can you deliver bulk back-to-school orders directly to a school or academy?
+                  </button>
+                </h3>
+                <div id="sFaqCol6" class="accordion-collapse collapse" aria-labelledby="sFaqHead6" data-bs-parent="#storageFaqAccordion">
+                  <div class="accordion-body">
+                    Yes! For parent-teacher associations, preschools and private academies, our logistics team coordinates direct campus delivery. We pre-sort carton boxes by grade and homeroom section, with optional custom student name tags affixed to each backpack box for effortless distribution on orientation day.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6 – FINAL CTA BANNER
+         ====================================================================== -->
+    <section class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="care-final-cta-heading">
+      <div class="container">
+        <div class="final-cta-banner">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="eyebrow-badge mb-3"><i class="bi bi-box-seam"></i> Fast Dispatch &amp; Expert Fitting</span>
+              <h2 id="care-final-cta-heading" class="text-white mb-2">NEED BULK DELIVERY FOR YOUR SCHOOL OR ADVICE ON BAG CARE?</h2>
+              <p class="text-white-50 mb-0">
+                Explore our full 20-model backpack collection by age group, or contact our customer desk for school batch pricing and care questions.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                <a href="products.html" class="btn-brand-mint">
+                  <i class="bi bi-backpack2"></i> EXPLORE ALL BACKPACKS
+                </a>
+                <a href="enquire.html?prefill=cart" class="btn-brand-outline-white">
+                  SUBMIT DELIVERY ENQUIRY <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3" aria-label="ZIPPACK Home">
+            <span class="brand-logo-mark" style="background-color: var(--mint-secondary); color: #FFFFFF;" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"/>
+                <path d="M8 10h8"/>
+              </svg>
+            </span>
+            <span class="brand-logo-text">
+              <span class="brand-logo-title text-white">ZIPPACK</span>
+            </span>
+          </a>
+          <p class="footer-tagline">
+            Vibrant, ergonomic school bags and backpacks designed for every student grade. From preschool 3D packs to campus laptop bags and sports gear.
+          </p>
+          <div class="footer-badge-item">
+            <i class="bi bi-shield-check"></i>
+            <span>Certified Child-Safe Non-Toxic Materials</span>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-title">Shop by Age &amp; Type</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Kids%20(Ages%203-7)">Kids (Ages 3–7)</a></li>
+            <li><a href="products.html?category=School%20(Ages%208-13)">School (Ages 8–13)</a></li>
+            <li><a href="products.html?category=Teens%20%26%20College">Teens &amp; College</a></li>
+            <li><a href="products.html?category=Sports%20%26%20Daypacks">Sports &amp; Daypacks</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-title">Store &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Store Info &amp; Hours</a></li>
+            <li><a href="enquire.html?prefill=cart">Bag &amp; Deal Enquiries</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery Guide</a></li>
+            <li><a href="brands.html">Partner Brands</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ZIPPACK. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="storage-delivery.html#faq-section" class="text-white-50">Delivery &amp; Care FAQs</a>
+          <a href="brands.html#faq-section" class="text-white-50">Brand Warranty FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

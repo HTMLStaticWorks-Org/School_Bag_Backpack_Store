@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products by Age &amp; Type | ZIPPACK — School Bag &amp; Backpack Store</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description"
+    content="Explore our complete collection of 20 school bags and backpacks organized by age and type across Kids (Ages 3-7), School (Ages 8-13), Teens &amp; College and Sports &amp; Daypacks.">
+  <meta property="og:title" content="Products by Age &amp; Type | ZIPPACK">
+  <meta property="og:description"
+    content="From playful toddler backpacks and orthopedic bookbags to 16-inch laptop packs and sports daypacks, find the ideal fit by age and type.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/frozen-snacks.webp">
+
+  <!-- Google Fonts: Outfit (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Global Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ========================================================================
+       GLOBAL STICKY HEADER
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" aria-label="ZIPPACK Home">
+          <span class="brand-logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+              <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+              <path d="M8 10h8" />
+            </svg>
+          </span>
+          <span class="brand-logo-text">
+            <span class="brand-logo-title">ZIPPACK</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link-item">Home</a></li>
+            <li><a href="home-2.html" class="nav-link-item">Home 2</a></li>
+            <li><a href="products.html" class="nav-link-item active" aria-current="page">Products</a></li>
+            <li><a href="brands.html" class="nav-link-item">Brands</a></li>
+            <li><a href="storage-delivery.html" class="nav-link-item">Care &amp; Delivery</a></li>
+            <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="icon-action-btn" id="headerSearchToggleBtn" aria-expanded="false"
+            aria-controls="headerSearchBar" aria-label="Toggle product search" title="Search Backpacks">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="rtlToggleBtn" data-toggle-rtl aria-pressed="false"
+            aria-label="Toggle RTL or LTR layout direction" title="Toggle RTL / LTR">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+
+          <button type="button" class="icon-action-btn" id="themeToggleBtn" data-toggle-theme aria-pressed="false"
+            aria-label="Toggle dark or light theme" title="Toggle Dark / Light Mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+
+          <button type="button" class="icon-action-btn" data-open-cart aria-label="Open Bag Enquiry Cart"
+            title="Bag Enquiry List">
+            <i class="bi bi-bag-check"></i>
+            <span class="cart-count-badge" id="cartCountBadge">0</span>
+          </button>
+
+          <a href="enquire.html" class="btn-brand-primary header-cta-desktop">Enquire Now</a>
+
+          <button type="button" class="hamburger-btn" id="mobileMenuOpenBtn" aria-expanded="false"
+            aria-controls="mobileNavDrawer" aria-label="Open navigation menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-search-bar" id="headerSearchBar">
+      <div class="container">
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label for="headerSearchInput" class="visually-hidden">Search school bags and backpacks</label>
+          <input type="search" id="headerSearchInput" class="header-search-input"
+            placeholder="Search toddler bags, orthopedic school packs, laptop backpacks, trolley bags...">
+          <button type="submit" class="btn-brand-primary py-2 px-3">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-backdrop" id="sharedOverlayBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <span class="fw-bold" style="font-family: var(--font-heading); color: var(--navy-primary);">STORE
+          NAVIGATION</span>
+        <button type="button" class="drawer-close-btn" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-tools">
+        <form class="mobile-drawer-search-form" data-drawer-search-form role="search">
+          <input type="search" class="mobile-drawer-search-input" placeholder="Search school bags..." aria-label="Search school bags and backpacks">
+          <button type="submit" class="btn-brand-primary py-2 px-3" aria-label="Submit search"><i class="bi bi-search"></i></button>
+        </form>
+        <div class="mobile-drawer-actions-grid">
+          <button type="button" class="mobile-drawer-action-item" data-open-cart aria-label="Open Bag Enquiry Cart">
+            <i class="bi bi-bag-check"></i>
+            <span>Bag List</span>
+            <span class="cart-count-badge">0</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-theme aria-pressed="false" aria-label="Toggle dark or light theme">
+            <i class="bi bi-moon-stars"></i>
+            <span>Theme</span>
+          </button>
+          <button type="button" class="mobile-drawer-action-item" data-toggle-rtl aria-pressed="false" aria-label="Toggle RTL or LTR layout">
+            <span class="rtl-badge-text">RTL</span>
+          </button>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html"><span>Home</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="home-2.html"><span>Home 2</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="products.html" class="active"><span>Products</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="brands.html"><span>Brands</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="storage-delivery.html"><span>Care &amp; Delivery</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-right"></i></a></li>
+        <li><a href="enquire.html"><span>Enquire Now</span> <i class="bi bi-arrow-up-right-circle"></i></a></li>
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="small mb-2 fw-semibold" style="color: var(--navy-primary);">COLORFUL CARRY. BACK-TO-SCHOOL READY.</p>
+      <a href="enquire.html" class="btn-brand-primary w-100">Submit Bag Enquiry</a>
+    </div>
+  </aside>
+
+  <!-- Enquiry Cart Slide-Over Drawer -->
+  <aside class="enquiry-cart-drawer" id="enquiryCartDrawer" aria-hidden="true" aria-label="Bag Enquiry List">
+    <div class="cart-drawer-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill" style="color: var(--mint-secondary); font-size: 1.2rem;"></i>
+        <h3>Bag Enquiry List</h3>
+      </div>
+      <button type="button" class="drawer-close-btn" id="enquiryCartCloseBtn" aria-label="Close enquiry cart">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="enquiryCartBody"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span class="text-muted small">Selected Quantity:</span>
+        <strong id="enquiryCartCount">0 Bags</strong>
+      </div>
+      <div class="cart-summary-line mb-2">
+        <span class="text-muted small">Estimated Deal Total:</span>
+        <strong id="enquiryCartTotal" style="font-size: 1.15rem; color: var(--navy-primary);">₹0</strong>
+      </div>
+      <p class="small text-muted mb-3" style="font-size: 0.75rem;">*Back-to-school deal prices are for demonstration only. Submit an
+        enquiry to confirm current store stock and combo offers.</p>
+      <div class="d-grid gap-2">
+        <a href="enquire.html?prefill=cart" id="sendEnquiryCartBtn" class="btn-brand-primary">SEND BAG ENQUIRY</a>
+        <button type="button" id="clearEnquiryCartBtn" class="btn-brand-secondary py-2" style="font-size: 0.8rem;">Clear
+          Enquiry List</button>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- ======================================================================
+         PRODUCTS PAGE HERO BANNER (STANDARDIZED HEIGHT ACROSS ALL NON-HOME PAGES)
+         ====================================================================== -->
+    <section class="page-hero-banner" aria-labelledby="products-page-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 col-md-7">
+            <span class="eyebrow-badge"><i class="bi bi-backpack2"></i> Shop By Age &amp; Bag Type</span>
+            <h1 id="products-page-heading">EXPLORE OUR SCHOOL BAG &amp; BACKPACK COLLECTION.</h1>
+            <p>
+              Filter by student age group and bag type—from 3D toddler packs and orthopedic school bookbags to 16" laptop campus backpacks and active sports daypacks.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-5 text-md-end">
+            <button type="button" class="btn-brand-mint" data-open-cart>
+              <i class="bi bi-bag-check"></i> View Bag Enquiry List (<span
+                class="cart-count-badge position-static border-0 p-0 bg-transparent text-dark">0</span>)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CATALOGUE TOOLBAR (AGE & TYPE FILTERS, SEARCH & SORTING) & PRODUCT GRID
+         ====================================================================== -->
+    <section class="section-block section-bg-ice" aria-label="School Bag & Backpack Catalogue">
+      <div class="container">
+        <!-- Inline Enquiry Cart Summary Bar (visible when items are in cart) -->
+        <div id="inlineEnquirySummaryBar"
+          class="p-3 mb-4 rounded border d-flex flex-wrap align-items-center justify-content-between gap-3"
+          style="background-color: var(--bg-soft-mint); border-color: var(--mint-secondary) !important;" hidden>
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-bag-check-fill" style="color: var(--navy-primary); font-size: 1.25rem;"></i>
+            <span id="inlineEnquirySummaryText" style="color: var(--navy-primary);"></span>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button type="button" class="btn-brand-secondary py-2 px-3" style="font-size: 0.82rem;" data-open-cart>
+              Review / Edit Quantities
+            </button>
+            <a href="enquire.html?prefill=cart" class="btn-brand-primary py-2 px-3" style="font-size: 0.82rem;">
+              SEND BAG ENQUIRY <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter, Search & Sort Controls -->
+        <div class="catalog-toolbar">
+          <!-- 5 Age & Type Category Filter Buttons -->
+          <div class="category-filter-pills" role="group" aria-label="Filter products by age and type">
+            <button type="button" class="filter-pill-btn active" data-category-filter="All" aria-pressed="true">
+              All Backpacks (20)
+            </button>
+            <button type="button" class="filter-pill-btn" data-category-filter="Kids (Ages 3-7)" aria-pressed="false">
+              Kids: Ages 3–7 (5)
+            </button>
+            <button type="button" class="filter-pill-btn" data-category-filter="School (Ages 8-13)" aria-pressed="false">
+              School: Ages 8–13 (5)
+            </button>
+            <button type="button" class="filter-pill-btn" data-category-filter="Teens & College" aria-pressed="false">
+              Teens &amp; College (5)
+            </button>
+            <button type="button" class="filter-pill-btn" data-category-filter="Sports & Daypacks" aria-pressed="false">
+              Sports &amp; Daypacks (5)
+            </button>
+          </div>
+
+          <!-- Search & Sorting Row -->
+          <div class="catalog-search-sort-row">
+            <div class="catalog-search-box">
+              <i class="bi bi-search" aria-hidden="true"></i>
+              <label for="productSearchInput" class="visually-hidden">Search backpacks by name, age or type</label>
+              <input type="search" id="productSearchInput" class="catalog-search-input"
+                placeholder="Search by bag type, age or feature (e.g. Trolley, Laptop, Dino, Ortho)...">
+            </div>
+
+            <div class="catalog-sort-meta">
+              <span class="product-count-display" id="productCountDisplay" aria-live="polite">
+                Showing 20 of 20 Backpacks &amp; Bags
+              </span>
+
+              <div class="d-flex align-items-center gap-2">
+                <label for="productSortSelect" class="small fw-bold text-nowrap"
+                  style="font-family: var(--font-heading); color: var(--navy-primary);">Sort By:</label>
+                <select id="productSortSelect" class="catalog-sort-select" aria-label="Sort products">
+                  <option value="featured">Featured Deals</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="name-asc">Name: A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo Pricing Notice -->
+        <p class="small text-muted mb-4">
+          <i class="bi bi-info-circle me-1"></i>
+          <strong>Note:</strong> All backpack deal prices in Indian Rupees (₹), liter capacities and age groups shown below are sample
+          demonstration data. Add bags to your Enquiry List to request store stock, combo discounts or school bulk rates.
+        </p>
+
+        <!-- Empty Search State -->
+        <div id="catalogEmptyState" class="text-center py-5 px-3 bg-white rounded border" hidden>
+          <div class="mb-3" style="font-size: 2.5rem; color: var(--mint-secondary);">
+            <i class="bi bi-search"></i>
+          </div>
+          <h3>No Matching Backpacks Found</h3>
+          <p class="mb-4">We couldn't find any school bags or backpacks matching your current search or age/type filter.</p>
+          <button type="button" id="resetCatalogFiltersBtn" class="btn-brand-primary">Reset All Filters</button>
+        </div>
+
+        <!-- 20 Sample Products Grid (Rendered by main.js and pre-populated for SEO) -->
+        <div class="product-grid product-grid-4" id="productsCatalogGrid">
+          <!-- 1. DinoRoar 3D Toddler Backpack -->
+          <article class="product-card" data-product-id="kid-01" data-category="Kids (Ages 3-7)">
+            <div class="product-card-media">
+              <img src="assets/images/frozen-samosa.webp" alt="DinoRoar 3D Toddler Backpack - Kids (Ages 3-7) (12L • Ages 3–5)" loading="lazy"
+                width="600" height="450">
+              <span class="product-category-tag">Kids (Ages 3-7)</span>
+              <span class="diet-indicator is-veg"><span class="diet-dot"></span>Lightweight</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h3 class="product-card-title">DinoRoar 3D Toddler Backpack</h3>
+                <p class="product-card-desc">Playful 3D dinosaur hardshell mini backpack with breathable mesh shoulder straps, anti-slip chest clip and wipe-clean lining for preschool adventures.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-pack-size"><i class="bi bi-backpack me-1"></i>12L &bull; Ages 3–5</span>
+                  <div class="product-price-wrap">
+                    <span class="product-price">₹799</span>
+                    <span class="demo-price-tag">Back-to-School Deal</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-brand-primary btn-add-enquiry" data-add-enquiry="kid-01">
+                  <i class="bi bi-plus-circle"></i> Add to Enquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. StarUnicorn Pastel School Bag -->
+          <article class="product-card" data-product-id="kid-02" data-category="Kids (Ages 3-7)">
+            <div class="product-card-media">
+              <img src="assets/images/chicken-nuggets.webp" alt="StarUnicorn Pastel School Bag - Kids (Ages 3-7) (15L • Ages 4–7)" loading="lazy"
+                width="600" height="450">
+              <span class="product-category-tag">Kids (Ages 3-7)</span>
+              <span class="diet-indicator is-nonveg"><span class="diet-dot"></span>Water-Resistant</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h3 class="product-card-title">StarUnicorn Pastel School Bag</h3>
+                <p class="product-card-desc">Colorful rainbow-pastel junior school bag with twin elastic water bottle pockets, easy-pull chunky zippers and a matching clip-on pencil pouch.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-pack-size"><i class="bi bi-backpack me-1"></i>15L &bull; Ages 4–7</span>
+                  <div class="product-price-wrap">
+                    <span class="product-price">₹899</span>
+                    <span class="demo-price-tag">Back-to-School Deal</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-brand-primary btn-add-enquiry" data-add-enquiry="kid-02">
+                  <i class="bi bi-plus-circle"></i> Add to Enquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. SpaceExplorer Junior Daypack -->
+          <article class="product-card" data-product-id="kid-03" data-category="Kids (Ages 3-7)">
+            <div class="product-card-media">
+              <img src="assets/images/spring-rolls.webp" alt="SpaceExplorer Junior Daypack - Kids (Ages 3-7) (14L • Ages 4–7)"
+                loading="lazy" width="600" height="450">
+              <span class="product-category-tag">Kids (Ages 3-7)</span>
+              <span class="diet-indicator is-veg"><span class="diet-dot"></span>Lightweight</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h3 class="product-card-title">SpaceExplorer Junior Daypack</h3>
+                <p class="product-card-desc">Glow-accented astronaut print kindergarten backpack featuring cushioned back support, custom name-tag window and a roomy snack box compartment.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-pack-size"><i class="bi bi-backpack me-1"></i>14L &bull; Ages 4–7</span>
+                  <div class="product-price-wrap">
+                    <span class="product-price">₹849</span>
+                    <span class="demo-price-tag">Back-to-School Deal</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-brand-primary btn-add-enquiry" data-add-enquiry="kid-03">
+                  <i class="bi bi-plus-circle"></i> Add to Enquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. SafariBuddy Plush Preschool Pack -->
+          <article class="product-card" data-product-id="kid-04" data-category="Kids (Ages 3-7)">
+            <div class="product-card-media">
+              <img src="assets/images/cheese-balls.webp" alt="SafariBuddy Plush Preschool Pack - Kids (Ages 3-7) (10L • Ages 3–5)" loading="lazy"
+                width="600" height="450">
+              <span class="product-category-tag">Kids (Ages 3-7)</span>
+              <span class="diet-indicator is-veg"><span class="diet-dot"></span>Ultra-Soft</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h3 class="product-card-title">SafariBuddy Plush Preschool Pack</h3>
+                <p class="product-card-desc">Featherlight ergonomically contoured toddler bag with soft-touch animal ears, sternum buckle and quick-access front pocket for crayons and wipes.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-pack-size"><i class="bi bi-backpack me-1"></i>10L &bull; Ages 3–5</span>
+                  <div class="product-price-wrap">
+                    <span class="product-price">₹699</span>
+                    <span class="demo-price-tag">Back-to-School Deal</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-brand-primary btn-add-enquiry" data-add-enquiry="kid-04">
+                  <i class="bi bi-plus-circle"></i> Add to Enquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. ColorPop Mini Roll-Top Bag -->
+          <article class="product-card" data-product-id="kid-05" data-category="Kids (Ages 3-7)">
+            <div class="product-card-media">
+              <img src="assets/images/potato-wedges.webp" alt="ColorPop Mini Roll-Top Bag - Kids (Ages 3-7) (16L • Ages 5–7)" loading="lazy"
+                width="600" height="450">
+              <span class="product-category-tag">Kids (Ages 3-7)</span>
+              <span class="diet-indicator is-nonveg"><span class="diet-dot"></span>Water-Resistant</span>
+            </div>
+            <div class="product-card-body">
+              <div>
+                <h3 class="product-card-title">ColorPop Mini Roll-Top Bag</h3>
+                <p class="product-card-desc">Bright color-block primary starter pack with 360-degree reflective safety strips, magnetic roll-top clasp and reinforced base for early grade readers.</p>
+              </div>
+              <div>
+                <div class="product-meta-row">
+                  <span class="product-pack-size"><i class="bi bi-backpack me-1"></i>16L &bull; Ages 5–7</span>
+                  <div class="product-price-wrap">
+                    <span class="product-price">₹949</span>
+                    <span class="demo-price-tag">Back-to-School Deal</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-brand-primary btn-add-enquiry" data-add-enquiry="kid-05">
+                  <i class="bi bi-plus-circle"></i> Add to Enquiry
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION: AGE-WISE BACKPACK FITTING GUIDE (SECTION 1)
+         ====================================================================== -->
+    <section class="section-block section-bg-ice reveal-on-scroll" aria-labelledby="prep-methods-heading">
+      <div class="container">
+        <div class="section-header text-center mx-auto" style="max-width: 680px;">
+          <span class="eyebrow-badge"><i class="bi bi-rulers"></i> Age &amp; Size Fitting Guide</span>
+          <h2 id="prep-methods-heading" class="mb-2">THE RIGHT BACKPACK SIZE FOR EVERY AGE.</h2>
+          <p class="mb-0">
+            Choose the right liter capacity and strap structure based on your child's height, grade level and daily carry load for healthy posture.
+          </p>
+        </div>
+
+        <div class="prep-guide-grid mt-4 pt-2">
+          <!-- Card 1: Ages 3-7 -->
+          <div class="prep-guide-card">
+            <div>
+              <div class="prep-card-header">
+                <div class="prep-icon-box" aria-hidden="true">
+                  <i class="bi bi-emoji-smile"></i>
+                </div>
+                <span class="prep-temp-badge">10L–16L &bull; &lt; 450g</span>
+              </div>
+              <h3 class="prep-card-title">Preschool &amp; Early Primary</h3>
+              <p class="prep-card-desc">
+                Designed for kids aged 3 to 7. Features featherlight shells, anti-slip chest clips, wipe-clean linings and chunky easy-pull zippers for small hands.
+              </p>
+            </div>
+            <div class="prep-meta-tag">
+              <i class="bi bi-check2-circle"></i> Best for Kids (Ages 3–7)
+            </div>
+          </div>
+
+          <!-- Card 2: Ages 8-13 -->
+          <div class="prep-guide-card">
+            <div>
+              <div class="prep-card-header">
+                <div class="prep-icon-box" aria-hidden="true">
+                  <i class="bi bi-book"></i>
+                </div>
+                <span class="prep-temp-badge">24L–28L &bull; Ortho Fit</span>
+              </div>
+              <h3 class="prep-card-title">Primary &amp; Middle School</h3>
+              <p class="prep-card-desc">
+                Engineered for ages 8 to 13 with 3 A4 compartments, S-curve lumbar cushions, load-compression straps or 6-wheel stair-climbing trolley frames.
+              </p>
+            </div>
+            <div class="prep-meta-tag">
+              <i class="bi bi-check2-circle"></i> Best for School (Ages 8–13)
+            </div>
+          </div>
+
+          <!-- Card 3: Teens & College -->
+          <div class="prep-guide-card">
+            <div>
+              <div class="prep-card-header">
+                <div class="prep-icon-box" aria-hidden="true">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <span class="prep-temp-badge">25L–30L &bull; 16" Tech</span>
+              </div>
+              <h3 class="prep-card-title">High School &amp; Campus</h3>
+              <p class="prep-card-desc">
+                Built for teens and college students with shockproof EVA laptop vaults, USB charging ports, RFID security pockets and sleek urban silhouettes.
+              </p>
+            </div>
+            <div class="prep-meta-tag">
+              <i class="bi bi-check2-circle"></i> Best for Teens &amp; College
+            </div>
+          </div>
+
+          <!-- Card 4: Sports & Daypacks -->
+          <div class="prep-guide-card">
+            <div>
+              <div class="prep-card-header">
+                <div class="prep-icon-box" aria-hidden="true">
+                  <i class="bi bi-compass"></i>
+                </div>
+                <span class="prep-temp-badge">10L–35L &bull; Active</span>
+              </div>
+              <h3 class="prep-card-title">Sports, PE &amp; Field Trips</h3>
+              <p class="prep-card-desc">
+                Specialized activity packs including ventilated shoe-tunnel gym bags, waterproof swim sackpacks, thermal lunch totes and 35L excursion rucksacks.
+              </p>
+            </div>
+            <div class="prep-meta-tag">
+              <i class="bi bi-check2-circle"></i> Best for Sports &amp; Daypacks
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION: DURABILITY & ERGONOMIC ASSURANCE (SECTION 2)
+         ====================================================================== -->
+    <section class="section-block section-bg-white reveal-on-scroll" aria-labelledby="quality-assurance-heading">
+      <div class="container">
+        <div class="quality-guarantee-wrap">
+          <!-- Left Column: Visual Editorial Image with Info Badge -->
+          <div class="quality-visual-frame">
+            <img src="assets/images/family-snacks.webp" alt="Students wearing ergonomic colorful backpacks with padded shoulder straps" loading="lazy" width="700" height="525">
+            <div class="quality-visual-badge">
+              <i class="bi bi-patch-check-fill fs-2" style="color: var(--lime-accent);"></i>
+              <div>
+                <strong>6-Point Ergonomic &amp; Durability Lock</strong>
+                <span>Tested for spine comfort, seam strength and monsoon water resistance.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Standards Content & 4 Feature Blocks -->
+          <div>
+            <span class="eyebrow-badge mb-2"><i class="bi bi-shield-check"></i> ZIPPACK Quality Standard</span>
+            <h2 id="quality-assurance-heading" class="mb-3">ENGINEERED TO SURVIVE EVERY SCHOOL YEAR.</h2>
+            <p class="mb-4">
+              Every backpack in our store undergoes strict load, zipper-cycle and water-repellency checks so students enjoy reliable daily carry from the first bell to final exams.
+            </p>
+
+            <div class="quality-feature-list">
+              <div class="quality-feature-box">
+                <div class="quality-feature-icon" aria-hidden="true">
+                  <i class="bi bi-person-check"></i>
+                </div>
+                <h4>S-Curve Spine Support</h4>
+                <p>Multi-layer breathable honeycomb back padding and contoured straps prevent shoulder digging and posture fatigue.</p>
+              </div>
+
+              <div class="quality-feature-box">
+                <div class="quality-feature-icon" aria-hidden="true">
+                  <i class="bi bi-droplet-half"></i>
+                </div>
+                <h4>900D Water-Repellent Shell</h4>
+                <p>High-density ripstop polyester and PU-coated linings shield textbooks, notebooks and laptops from rain and spills.</p>
+              </div>
+
+              <div class="quality-feature-box">
+                <div class="quality-feature-icon" aria-hidden="true">
+                  <i class="bi bi-layers"></i>
+                </div>
+                <h4>Bar-Tack Stress Stitching</h4>
+                <p>Reinforced box-and-cross stitching at haul loops and strap anchors supports heavy academic loads without tearing.</p>
+              </div>
+
+              <div class="quality-feature-box">
+                <div class="quality-feature-icon" aria-hidden="true">
+                  <i class="bi bi-brightness-high"></i>
+                </div>
+                <h4>360° Reflective Safety</h4>
+                <p>High-visibility reflective strips on front panels and shoulder straps keep students visible during early mornings and evenings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         BULK & DEAL ENQUIRY CALLOUT
+         ====================================================================== -->
+    <section class="section-block section-bg-mint" aria-labelledby="enquiry-callout-heading">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="eyebrow-badge">Need Assistance?</span>
+            <h2 id="enquiry-callout-heading" class="mb-2">READY TO SUBMIT YOUR BAG OR DEAL ENQUIRY?</h2>
+            <p class="mb-0">
+              Review your selected backpacks in the Bag Enquiry List or head directly to our dedicated Enquire page with your selections prefilled.
+            </p>
+          </div>
+          <div class="col-lg-4 d-flex flex-wrap gap-3 justify-content-lg-end">
+            <button type="button" class="btn-brand-secondary" data-open-cart>
+              Open Bag Enquiry List
+            </button>
+            <a href="enquire.html?prefill=cart" class="btn-brand-primary">
+              SEND BAG ENQUIRY
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="brand-logo mb-3">
+            <span class="brand-logo-mark" style="background-color: var(--mint-secondary); color: #FFFFFF;"
+              aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                <path d="M8 10h8" />
+              </svg>
+            </span>
+            <span class="brand-logo-text">
+              <span class="brand-logo-title text-white">ZIPPACK</span>
+            </span>
+          </a>
+          <p class="small mb-3" style="color: rgba(255,255,255,0.8); max-width: 340px;">
+            Colorful school bags and ergonomic backpacks built for every age and grade. Explore toddler packs, orthopedic bookbags, college laptop bags and sports daypacks.
+          </p>
+          <div class="contact-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp" title="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube" title="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X (Twitter)" title="X (Twitter)">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquire.html">Enquire Now</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h3 class="footer-title">Shop by Age &amp; Type</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=Kids%20(Ages%203-7)">Kids (Ages 3–7)</a></li>
+            <li><a href="products.html?category=School%20(Ages%208-13)">School (Ages 8–13)</a></li>
+            <li><a href="products.html?category=Teens%20%26%20College">Teens &amp; College</a></li>
+            <li><a href="products.html?category=Sports%20%26%20Daypacks">Sports &amp; Daypacks</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-title">Store &amp; Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Store Info &amp; Hours</a></li>
+            <li><a href="enquire.html?prefill=cart">Bag &amp; Deal Enquiries</a></li>
+            <li><a href="storage-delivery.html">Care &amp; Delivery Guide</a></li>
+            <li><a href="brands.html">Partner Brands</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ZIPPACK. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="storage-delivery.html#faq-section" class="text-white-50">Delivery &amp; Care FAQs</a>
+          <a href="brands.html#faq-section" class="text-white-50">Brand Warranty FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
