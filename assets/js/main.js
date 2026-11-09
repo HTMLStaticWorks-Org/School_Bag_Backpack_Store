@@ -21,7 +21,8 @@ const PRODUCT_CATALOG = [
     packSize: '12L • Ages 3–5',
     price: 799,
     featured: true,
-    image: 'assets/images/frozen-samosa.webp',
+    image: 'assets/images/prod-kid-01.webp',
+    homeImage: 'assets/images/h1-feat-1.webp',
     description: 'Playful 3D dinosaur hardshell mini backpack with breathable mesh shoulder straps, anti-slip chest clip and wipe-clean lining for preschool adventures.'
   },
   {
@@ -33,7 +34,8 @@ const PRODUCT_CATALOG = [
     packSize: '15L • Ages 4–7',
     price: 899,
     featured: true,
-    image: 'assets/images/chicken-nuggets.webp',
+    image: 'assets/images/prod-kid-02.webp',
+    homeImage: 'assets/images/h1-feat-2.webp',
     description: 'Colorful rainbow-pastel junior school bag with twin elastic water bottle pockets, easy-pull chunky zippers and a matching clip-on pencil pouch.'
   },
   {
@@ -45,7 +47,8 @@ const PRODUCT_CATALOG = [
     packSize: '14L • Ages 4–7',
     price: 849,
     featured: true,
-    image: 'assets/images/spring-rolls.webp',
+    image: 'assets/images/prod-kid-03.webp',
+    homeImage: 'assets/images/h1-feat-3.webp',
     description: 'Glow-accented astronaut print kindergarten backpack featuring cushioned back support, custom name-tag window and a roomy snack box compartment.'
   },
   {
@@ -57,7 +60,7 @@ const PRODUCT_CATALOG = [
     packSize: '10L • Ages 3–5',
     price: 699,
     featured: false,
-    image: 'assets/images/cheese-balls.webp',
+    image: 'assets/images/prod-kid-04.webp',
     description: 'Featherlight ergonomically contoured toddler bag with soft-touch animal ears, sternum buckle and quick-access front pocket for crayons and wipes.'
   },
   {
@@ -69,7 +72,7 @@ const PRODUCT_CATALOG = [
     packSize: '16L • Ages 5–7',
     price: 949,
     featured: false,
-    image: 'assets/images/potato-wedges.webp',
+    image: 'assets/images/prod-kid-05.webp',
     description: 'Bright color-block primary starter pack with 360-degree reflective safety strips, magnetic roll-top clasp and reinforced base for early grade readers.'
   },
 
@@ -83,7 +86,7 @@ const PRODUCT_CATALOG = [
     packSize: '24L • Ages 8–12',
     price: 1499,
     featured: false,
-    image: 'assets/images/plain-paratha.webp',
+    image: 'assets/images/prod-sch-01.webp',
     description: 'Multi-chamber primary & middle school bookbag engineered with S-curve padded straps and weight-distributing lumbar cushions for heavy textbooks.'
   },
   {
@@ -95,7 +98,8 @@ const PRODUCT_CATALOG = [
     packSize: '28L • Ages 8–13',
     price: 2199,
     featured: true,
-    image: 'assets/images/aloo-paratha.webp',
+    image: 'assets/images/prod-sch-02.webp',
+    homeImage: 'assets/images/h1-feat-4.webp',
     description: 'Detachable stair-climbing 6-wheel trolley school backpack with aircraft-grade aluminum handle, built-in rain cover and 3 spacious A4 book compartments.'
   },
   {
@@ -107,7 +111,7 @@ const PRODUCT_CATALOG = [
     packSize: '26L • Ages 9–13',
     price: 1299,
     featured: false,
-    image: 'assets/images/malabar-paratha.webp',
+    image: 'assets/images/prod-sch-03.webp',
     description: 'Breathable honeycomb-back middle school pack with dedicated lunchbox sleeve, multi-slot stationery organizer and side load-compression straps.'
   },
   {
@@ -119,7 +123,7 @@ const PRODUCT_CATALOG = [
     packSize: '25L • Ages 8–12',
     price: 1350,
     featured: false,
-    image: 'assets/images/wheat-paratha.webp',
+    image: 'assets/images/prod-sch-04.webp',
     description: 'High-density 900D ripstop school backpack with fold-out neon rain cover, high-visibility night safety piping and dual steel-bottle side holders.'
   },
   {
@@ -131,7 +135,7 @@ const PRODUCT_CATALOG = [
     packSize: '27L • Ages 9–13',
     price: 1699,
     featured: false,
-    image: 'assets/images/veg-paratha.webp',
+    image: 'assets/images/prod-sch-05.webp',
     description: 'Complete back-to-school value bundle including a 27L ergonomic backpack, insulated thermal lunch tote, zip pencil case and bottle carrier.'
   },
 
@@ -145,7 +149,8 @@ const PRODUCT_CATALOG = [
     packSize: '30L • Ages 14+',
     price: 1899,
     featured: true,
-    image: 'assets/images/green-peas.webp',
+    image: 'assets/images/prod-col-01.webp',
+    homeImage: 'assets/images/h1-feat-5.webp',
     description: 'Sleek dual-tone campus backpack with shockproof EVA 16-inch laptop vault, external USB charging port and hidden anti-theft back passport pocket.'
   },
   {
@@ -157,7 +162,7 @@ const PRODUCT_CATALOG = [
     packSize: '28L • Ages 13–18',
     price: 1599,
     featured: false,
-    image: 'assets/images/sweet-corn.webp',
+    image: 'assets/images/prod-col-02.webp',
     description: 'Structured high-capacity backpack for teens featuring a fleece-lined tablet sleeve, power-bank cable organizer, key clip and luggage trolley strap.'
   },
   {
@@ -169,7 +174,7 @@ const PRODUCT_CATALOG = [
     packSize: '29L • Ages 15+',
     price: 1750,
     featured: false,
-    image: 'assets/images/mixed-vegetables.webp',
+    image: 'assets/images/prod-col-03.webp',
     description: 'Heavyweight water-repellent waxed canvas college rucksack with magnetic strap buckles, padded 15.6" laptop sleeve and quick side-zip access.'
   },
   {
@@ -181,7 +186,7 @@ const PRODUCT_CATALOG = [
     packSize: '26L • Ages 16+',
     price: 2099,
     featured: false,
-    image: 'assets/images/frozen-broccoli.webp',
+    image: 'assets/images/prod-col-04.webp',
     description: 'Cut-resistant college & commuter backpack with lockable main zippers, RFID-shielded metro card slot and 180-degree flat-lay tech compartment.'
   },
   {
@@ -193,7 +198,7 @@ const PRODUCT_CATALOG = [
     packSize: '25L • Ages 13–19',
     price: 1399,
     featured: false,
-    image: 'assets/images/veg-cutlets.webp',
+    image: 'assets/images/prod-col-05.webp',
     description: 'Bold multi-color streetwear backpack crafted for high school and college daily carry with padded sunglass pocket, binder divider and reinforced base.'
   },
 
@@ -207,7 +212,8 @@ const PRODUCT_CATALOG = [
     packSize: '32L • All Ages',
     price: 1650,
     featured: true,
-    image: 'assets/images/chicken-kebab.webp',
+    image: 'assets/images/prod-spt-01.webp',
+    homeImage: 'assets/images/h1-feat-6.webp',
     description: 'Athletic training backpack with a ventilated bottom shoe tunnel, waterproof wet-gear pocket and expandable front cord for footballs or helmets.'
   },
   {
@@ -219,7 +225,7 @@ const PRODUCT_CATALOG = [
     packSize: '35L • Ages 12+',
     price: 2299,
     featured: false,
-    image: 'assets/images/chicken-strips.webp',
+    image: 'assets/images/prod-spt-02.webp',
     description: 'Rugged outdoor camp and school field-trip rucksack with adjustable sternum and hip belts, hydration sleeve and high-tear ripstop shell.'
   },
   {
@@ -231,7 +237,7 @@ const PRODUCT_CATALOG = [
     packSize: '18L • All Ages',
     price: 599,
     featured: false,
-    image: 'assets/images/chicken-sausages.webp',
+    image: 'assets/images/prod-spt-03.webp',
     description: 'Heavy-duty water-repellent Oxford drawstring gym bag with wide comfort shoulder cords and zippered front valuables pocket for PE and swim club.'
   },
   {
@@ -243,7 +249,7 @@ const PRODUCT_CATALOG = [
     packSize: '10L • All Ages',
     price: 649,
     featured: false,
-    image: 'assets/images/fish-fillets.webp',
+    image: 'assets/images/prod-spt-04.webp',
     description: 'Leak-proof PEVA thermal insulated lunch bag & mini backpack with adjustable shoulder strap, inner cutlery mesh pocket and wide dual-zip opening.'
   },
   {
@@ -255,7 +261,7 @@ const PRODUCT_CATALOG = [
     packSize: '22L • Ages 10+',
     price: 999,
     featured: false,
-    image: 'assets/images/frozen-prawns.webp',
+    image: 'assets/images/prod-spt-05.webp',
     description: 'Ultralight daypack that folds neatly into its own inner pouch—ideal for after-school tuition classes, museum field trips and weekend cycling.'
   }
 ];
@@ -436,15 +442,16 @@ function updateAllCartUI() {
 /* ==========================================================================
    4. PRODUCT CARD HTML GENERATOR
    ========================================================================== */
-function createProductCardHTML(product) {
+function createProductCardHTML(product, useHomeImage = false) {
   const isVeg = product.diet === 'veg';
   const badgeText = product.badgeLabel || (isVeg ? 'Ergonomic' : 'Water-Resistant');
   const dietClass = isVeg ? 'is-veg' : 'is-nonveg';
+  const imgSrc = (useHomeImage && product.homeImage) ? product.homeImage : product.image;
 
   return `
     <article class="product-card" data-product-id="${product.id}" data-category="${product.category}">
       <div class="product-card-media">
-        <img src="${product.image}" alt="${product.name} - ${product.category} (${product.packSize})" loading="lazy" width="600" height="450">
+        <img src="${imgSrc}" alt="${product.name} - ${product.category} (${product.packSize})" loading="lazy" width="600" height="450">
         <span class="product-category-tag">${product.category}</span>
         <span class="diet-indicator ${dietClass}" title="${badgeText} Feature">
           <span class="diet-dot" aria-hidden="true"></span>
@@ -481,7 +488,7 @@ function initHomeFeaturedProducts() {
   if (!featuredContainer) return;
 
   const featuredList = PRODUCT_CATALOG.filter(item => item.featured).slice(0, 6);
-  featuredContainer.innerHTML = featuredList.map(createProductCardHTML).join('');
+  featuredContainer.innerHTML = featuredList.map(item => createProductCardHTML(item, true)).join('');
 }
 
 /* ==========================================================================
@@ -976,6 +983,37 @@ function initGlobalUI() {
   } else {
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
+
+  // Floating Back to Top Button Controller
+  let backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) {
+    backToTopBtn = document.createElement('button');
+    backToTopBtn.type = 'button';
+    backToTopBtn.id = 'backToTopBtn';
+    backToTopBtn.className = 'back-to-top-btn';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
+    backToTopBtn.setAttribute('title', 'Back to top');
+    backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+    document.body.appendChild(backToTopBtn);
+  }
+
+  const toggleBackToTopVisibility = () => {
+    if (window.scrollY > 280) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTopVisibility, { passive: true });
+  toggleBackToTopVisibility();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
 
 /* ==========================================================================

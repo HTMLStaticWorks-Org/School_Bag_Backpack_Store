@@ -22,21 +22,40 @@
 }
 
 /* ==========================================================================
-   2. PREMIUM HERO SECTION (COBALT BLUE + CORAL & SUNNY RADIAL LIGHTING + GLASSMORPHISM)
+   2. PREMIUM HERO SECTION — LEFT BENTO MOSAIC + RIGHT EDITORIAL SHOWCASE
    ========================================================================== */
 .h2-hero-section {
   position: relative;
-  min-height: calc(100vh - 76px);
-  display: flex;
-  align-items: center;
-  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4.75rem) 0;
   background-color: var(--navy-primary);
   background-image:
-    radial-gradient(circle at 82% 24%, rgba(255, 84, 54, 0.35) 0%, transparent 48%),
-    radial-gradient(circle at 14% 85%, rgba(255, 186, 8, 0.22) 0%, transparent 42%),
-    linear-gradient(135deg, #140827 0%, #241442 55%, #442378 100%);
+    radial-gradient(circle at 82% 18%, rgba(255, 84, 54, 0.34) 0%, transparent 46%),
+    radial-gradient(circle at 16% 84%, rgba(255, 186, 8, 0.22) 0%, transparent 42%),
+    linear-gradient(135deg, #140827 0%, #241442 52%, #3E1F70 100%);
   color: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 1010px;
+}
+
+@media (min-width: 576px) {
+  .h2-hero-section {
+    min-height: 1075px;
+  }
+}
+
+@media (min-width: 992px) {
+  .h2-hero-section {
+    min-height: 705px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .h2-hero-section {
+    min-height: 680px;
+  }
 }
 
 /* Subtle Animated Ambient Orbs */
@@ -74,20 +93,32 @@
   }
 }
 
-.h2-hero-grid {
+/* Reversed 2-Column Split Stage: Left Bento Mosaic + Right Editorial Content */
+.h2-hero-split-stage {
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.75rem;
+  gap: 2.25rem;
   align-items: center;
 }
 
 @media (min-width: 992px) {
-  .h2-hero-grid {
-    grid-template-columns: 1.06fr 0.94fr;
-    gap: 3.5rem;
+  .h2-hero-split-stage {
+    grid-template-columns: 0.96fr 1.04fr;
+    gap: 2.75rem;
   }
+}
+
+/* Right Editorial Campaign Panel */
+.h2-hero-center-header {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
 }
 
 .h2-hero-label {
@@ -99,12 +130,13 @@
   color: var(--lime-accent);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.09em;
+  font-size: 0.76rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 0.42rem 0.95rem;
+  padding: 0.36rem 0.9rem;
   border-radius: 999px;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1rem;
+  width: fit-content;
 }
 
 .h2-hero-label-dot {
@@ -113,16 +145,17 @@
   border-radius: 50%;
   background-color: var(--lime-accent);
   box-shadow: 0 0 10px var(--lime-accent);
+  flex-shrink: 0;
 }
 
 .h2-hero-heading {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(2.25rem, 4.6vw + 0.5rem, 3.85rem);
+  font-size: clamp(2rem, 3.6vw + 0.35rem, 3.2rem);
   line-height: 1.12;
   letter-spacing: -0.025em;
   color: #FFFFFF;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.95rem;
 }
 
 .h2-hero-heading .text-mint-accent {
@@ -136,33 +169,72 @@
 }
 
 .h2-hero-description {
-  font-size: clamp(1rem, 1.1vw, 1.16rem);
-  color: rgba(255, 255, 255, 0.86);
-  max-width: 560px;
-  margin-bottom: 2rem;
-  line-height: 1.7;
+  font-size: clamp(0.96rem, 1.05vw, 1.08rem);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 580px;
+  margin: 0 0 1.15rem;
+  line-height: 1.6;
+}
+
+/* Quick Grade Filter Pills inside Hero */
+.h2-hero-grade-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.h2-grade-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.74rem;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.h2-grade-pill i {
+  color: var(--lime-accent);
+}
+
+.h2-grade-pill:hover {
+  background-color: var(--mint-secondary);
+  border-color: var(--mint-secondary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 .h2-hero-cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-bottom: 2.25rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .btn-h2-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   background-color: var(--mint-secondary);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 0.9rem 1.75rem;
+  padding: 0.76rem 1.35rem;
   border: 2px solid var(--mint-secondary);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
@@ -182,16 +254,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
-  background-color: rgba(255, 255, 255, 0.07);
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 0.9rem 1.75rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  padding: 0.76rem 1.35rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.48);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   white-space: nowrap;
@@ -205,211 +277,312 @@
   transform: translateY(-2px);
 }
 
-/* Three Hero Highlights */
-.h2-hero-highlights {
+/* Left 2x2 Bento Visual Mosaic Grid */
+.h2-hero-bento-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.85rem;
-  padding-top: 1.65rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  align-items: stretch;
+}
+
+.h2-bento-card-main {
+  grid-column: span 2;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  height: 235px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #140827;
+}
+
+.h2-bento-main-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.h2-bento-main-overlay {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(20, 8, 39, 0.05) 0%, rgba(20, 8, 39, 0.9) 100%);
+  padding: 0.75rem 0.9rem;
+  margin-top: auto;
+}
+
+.h2-lime-corner-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: var(--lime-accent);
+  color: #140827;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.h2-glass-info-card {
+  background: rgba(36, 20, 66, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 84, 54, 0.55);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: #FFFFFF;
+}
+
+.h2-glass-info-text strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--lime-accent);
+  line-height: 1.2;
+}
+
+.h2-glass-info-text span {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.h2-bento-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.h2-bento-card:hover {
+  border-color: rgba(255, 186, 8, 0.55);
+  transform: translateY(-3px);
+}
+
+.h2-bento-media {
+  position: relative;
+  height: 112px;
+  overflow: hidden;
+  background-color: #140827;
+}
+
+.h2-bento-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.h2-bento-card:hover .h2-bento-media img {
+  transform: scale(1.05);
+}
+
+.h2-bento-tag {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: rgba(20, 8, 39, 0.88);
+  color: var(--lime-accent);
+  border: 1px solid rgba(255, 186, 8, 0.45);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+
+.h2-bento-body {
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.h2-bento-body h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+  line-height: 1.25;
+}
+
+.h2-bento-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--lime-accent) !important;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.h2-bento-link:hover {
+  color: #FFFFFF !important;
+}
+
+/* Bottom Highlight Chips Row inside Right Column */
+.h2-bento-stack {
+  display: contents;
+}
+
+.h2-bento-stats-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.65rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .h2-highlight-chip {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.65rem 0.9rem;
+  padding: 0.48rem 0.68rem;
   border-radius: var(--radius-sm);
 }
 
 .h2-highlight-chip i {
   color: var(--lime-accent);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
 .h2-highlight-chip span {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: #FFFFFF;
+  line-height: 1.25;
 }
 
-/* Right Column: Editorial Showcase + Floating Category Cards + Glassmorphism Card */
-.h2-hero-stage {
-  position: relative;
-  padding: 0.75rem;
-}
-
-.h2-hero-main-photo {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
-  aspect-ratio: 4 / 3.3;
-  background-color: var(--navy-dark);
-}
-
-.h2-hero-main-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Decorative Citrus-Lime Accent Badge */
-.h2-lime-corner-badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: var(--lime-accent);
-  color: #140827;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.76rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.5rem 0.95rem;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-  z-index: 4;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* Floating Food Category Cards */
-.h2-floating-cat-card {
-  position: absolute;
-  background-color: var(--surface-white);
-  color: var(--navy-primary);
-  border-radius: var(--radius-md);
-  padding: 0.6rem 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  box-shadow: 0 14px 32px rgba(30, 11, 54, 0.28);
-  border: 1px solid var(--border-color);
-  z-index: 4;
-  animation: h2CardFloat 5s ease-in-out infinite alternate;
-  text-decoration: none;
-}
-
-.h2-floating-cat-card:hover {
-  border-color: var(--mint-secondary);
-  transform: translateY(-3px);
-}
-
-.h2-floating-cat-thumb {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  flex-shrink: 0;
-  background-color: var(--bg-soft-mint);
-}
-
-.h2-floating-cat-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.h2-floating-cat-meta strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  color: var(--navy-primary);
-  line-height: 1.2;
-}
-
-.h2-floating-cat-meta span {
-  font-size: 0.72rem;
-  color: var(--mint-hover);
-  font-weight: 600;
-}
-
-.h2-float-top-left {
-  top: 1.1rem;
-  left: -0.5rem;
-}
-
-.h2-float-mid-right {
-  bottom: 5.5rem;
-  right: -0.5rem;
-  animation-delay: 1.5s;
-}
-
-/* Glassmorphism Information Card */
-.h2-glass-info-card {
-  position: absolute;
-  bottom: -0.75rem;
-  left: 1rem;
-  right: 1rem;
-  background: rgba(15, 41, 107, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 46, 99, 0.45);
-  border-radius: var(--radius-md);
-  padding: 0.95rem 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: #FFFFFF;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-  z-index: 4;
-}
-
-.h2-glass-info-text strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  color: var(--lime-accent);
-}
-
-.h2-glass-info-text span {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.88);
-}
-
-@keyframes h2CardFloat {
-  0% {
-    transform: translateY(0);
+@media (min-width: 1200px) {
+  .h2-bento-card-main {
+    height: 285px;
   }
-  100% {
-    transform: translateY(-6px);
+  .h2-bento-media {
+    height: 138px;
   }
 }
 
-@media (max-width: 767px) {
-  .h2-floating-cat-card {
-    position: static;
-    margin-top: 0.65rem;
-    animation: none;
+@media (max-width: 575px) {
+  .h2-hero-split-stage {
+    gap: 1.35rem;
   }
-  .h2-glass-info-card {
-    position: static;
-    margin-top: 0.65rem;
+  .h2-hero-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
   }
-  .h2-hero-stage {
-    padding: 0;
+  .h2-bento-card-main {
+    grid-column: span 2;
+    height: 155px;
+  }
+  .h2-bento-media {
+    height: 74px;
+  }
+  .h2-bento-body {
+    padding: 0.5rem 0.6rem;
+  }
+  .h2-bento-body h3 {
+    font-size: 0.78rem;
+    margin-bottom: 0.2rem;
+  }
+  .h2-bento-link {
+    font-size: 0.66rem;
+  }
+  .h2-hero-label {
+    margin-bottom: 0.65rem;
+    font-size: 0.68rem;
+    padding: 0.28rem 0.7rem;
+  }
+  .h2-hero-heading {
+    font-size: 1.75rem;
+    margin-bottom: 0.65rem;
+  }
+  .h2-hero-description {
+    font-size: 0.88rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.48;
+  }
+  .h2-hero-grade-pills {
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+  }
+  .h2-grade-pill {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem;
+  }
+  .h2-hero-cta-row {
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+    width: 100%;
+  }
+  .h2-hero-cta-row .btn-h2-primary,
+  .h2-hero-cta-row .btn-h2-secondary,
+  .h2-hero-cta-row .btn-brand-mint {
+    padding: 0.58rem 0.85rem;
+    font-size: 0.76rem;
+    flex: 1 1 auto;
+  }
+  .h2-bento-stats-card {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding-top: 0.75rem;
+  }
+  .h2-highlight-chip {
+    padding: 0.36rem 0.6rem;
   }
   .h2-lime-corner-badge {
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.62rem;
+    padding: 0.25rem 0.55rem;
   }
 }
 
 /* ==========================================================================
-   3. SECTION 3: PREMIUM QUICK PICKS ("Good Food, Ready in Minutes")
+   3. SECTION 3: PREMIUM QUICK PICKS
    ========================================================================== */
 .h2-quick-picks-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 @media (min-width: 600px) {
@@ -432,6 +605,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
   box-shadow: var(--shadow-subtle);
 }
@@ -484,13 +658,17 @@
 }
 
 .h2-quick-card-title {
-  font-size: 1.2rem;
+  font-size: 1.16rem;
+  line-height: 1.3;
+  min-height: 2.6em;
   margin-bottom: 0.45rem;
 }
 
 .h2-quick-card-desc {
   font-size: 0.9rem;
+  line-height: 1.55;
   margin-bottom: 1.15rem;
+  flex-grow: 1;
 }
 
 .h2-explore-link {
@@ -503,6 +681,9 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--navy-primary);
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .h2-explore-link i {
@@ -515,12 +696,13 @@
 }
 
 /* ==========================================================================
-   4. SECTION 4: SIGNATURE COLLECTION ("Made for Your Everyday Cravings")
+   4. SECTION 4: SIGNATURE COLLECTION
    ========================================================================== */
 .h2-signature-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.65rem;
+  align-items: stretch;
 }
 
 @media (min-width: 600px) {
@@ -543,6 +725,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   box-shadow: var(--shadow-subtle);
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
 }
@@ -596,22 +779,27 @@
 }
 
 .h2-signature-title {
-  font-size: 1.22rem;
+  font-size: 1.18rem;
+  line-height: 1.3;
+  min-height: 2.6em;
   margin-bottom: 0.45rem;
 }
 
 .h2-signature-desc {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
   margin-bottom: 1.25rem;
+  flex-grow: 1;
 }
 
 /* ==========================================================================
-   5. SECTION 5: WHY CHOOSE US ("Convenience Meets Great Taste")
+   5. SECTION 5: WHY CHOOSE US ("Ergonomic Design Meets Bold Style")
    ========================================================================== */
 .h2-why-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 @media (min-width: 600px) {
@@ -630,8 +818,12 @@
   background-color: var(--surface-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: 1.75rem 1.45rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-shadow: var(--shadow-subtle);
 }
@@ -653,11 +845,28 @@
   justify-content: center;
   font-size: 1.45rem;
   margin-bottom: 1.15rem;
+  flex-shrink: 0;
   border: 1px solid rgba(255, 46, 99, 0.35);
 }
 
+.h2-why-card h3 {
+  font-size: 1.14rem;
+  line-height: 1.3;
+  min-height: 2.6em;
+  margin-bottom: 0.55rem;
+  color: var(--navy-primary);
+}
+
+.h2-why-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
 /* ==========================================================================
-   6. SECTION 6: LIFESTYLE / FOOD EXPERIENCE SPLIT SECTION
+   6. SECTION 6: LIFESTYLE / PACK EXPERIENCE SPLIT SECTION
    ========================================================================== */
 .h2-lifestyle-split {
   display: grid;
@@ -668,8 +877,8 @@
 
 @media (min-width: 992px) {
   .h2-lifestyle-split {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 3.5rem;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 3.25rem;
   }
 }
 
@@ -703,7 +912,7 @@
 }
 
 /* ==========================================================================
-   7. SECTION 7: STORAGE & DELIVERY HIGHLIGHT BANNER
+   7. SECTION 7: TRUSTED BRANDS HIGHLIGHT BANNER
    ========================================================================== */
 .h2-storage-banner {
   background: linear-gradient(135deg, var(--navy-primary) 0%, #140827 100%);
@@ -730,6 +939,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.h2-storage-banner-content .eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  padding: 0.28rem 0.68rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
 }
 
 .h2-storage-banner-content h2 {
@@ -737,7 +963,7 @@
 }
 
 .h2-storage-banner-content p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .h2-storage-banner-media {
@@ -753,12 +979,13 @@
 }
 
 /* ==========================================================================
-   8. SECTION 8: CUSTOMER EXPERIENCE SECTION ("Your Everyday Food Convenience")
+   8. SECTION 8: CUSTOMER EXPERIENCE SECTION
    ========================================================================== */
 .h2-experience-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -775,6 +1002,7 @@
   display: flex;
   align-items: flex-start;
   gap: 1.15rem;
+  height: 100%;
   box-shadow: var(--shadow-subtle);
   transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
@@ -782,6 +1010,12 @@
 .h2-experience-card:hover {
   border-color: var(--mint-secondary);
   transform: translateY(-3px);
+}
+
+.h2-experience-card h3 {
+  font-size: 1.14rem;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
 }
 
 .h2-experience-num {
