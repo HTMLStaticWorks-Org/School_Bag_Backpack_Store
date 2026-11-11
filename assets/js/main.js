@@ -293,7 +293,28 @@ function saveEnquiryCart(cart) {
 
 function addToEnquiryCart(productId, btnElement = null) {
   const product = PRODUCT_CATALOG.find(item => item.id === productId);
-  if (!product) return;
+  const domCard = btnElement ? btnElement.closest('.product-card') : null;
+
+  let name = product ? product.name : '';
+  let category = product ? product.category : '';
+  let packSize = product ? product.packSize : '';
+  let price = product ? product.price : 0;
+
+  if (domCard) {
+    const domTitle = domCard.querySelector('.product-card-title')?.textContent.trim();
+    if (domTitle) name = domTitle;
+    const domCat = domCard.getAttribute('data-category');
+    if (domCat) category = domCat;
+    const domPack = domCard.querySelector('.product-pack-size')?.textContent.trim();
+    if (domPack) packSize = domPack;
+    const domPrice = domCard.querySelector('.product-price');
+    if (domPrice) {
+      const parsed = parseInt(domPrice.textContent.replace(/[^0-9]/g, ''), 10);
+      if (!isNaN(parsed)) price = parsed;
+    }
+  }
+
+  if (!product && !domCard) return;
 
   const cart = getEnquiryCart();
   const existingIndex = cart.findIndex(item => item.id === productId);
@@ -302,11 +323,11 @@ function addToEnquiryCart(productId, btnElement = null) {
     cart[existingIndex].qty += 1;
   } else {
     cart.push({
-      id: product.id,
-      name: product.name,
-      category: product.category,
-      packSize: product.packSize,
-      price: product.price,
+      id: productId,
+      name: name,
+      category: category,
+      packSize: packSize,
+      price: price,
       qty: 1
     });
   }
@@ -523,6 +544,24 @@ function initProductsCatalogPage() {
     searchInput.value = searchQuery;
   }
 
+  // Cache static DOM cards so user HTML changes remain intact
+  const domCards = Array.from(catalogGrid.querySelectorAll('.product-card'));
+
+  function getCardPrice(card) {
+    const el = card.querySelector('.product-price');
+    if (!el) return 0;
+    const val = parseInt(el.textContent.replace(/[^0-9]/g, ''), 10);
+    return isNaN(val) ? 0 : val;
+  }
+
+  function getCardTitle(card) {
+    return (card.querySelector('.product-card-title')?.textContent || '').trim();
+  }
+
+  function getCardDesc(card) {
+    return (card.querySelector('.product-card-desc')?.textContent || '').trim();
+  }
+
   function syncFilterButtonStates() {
     filterButtons.forEach(btn => {
       const cat = btn.getAttribute('data-category-filter');
@@ -533,39 +572,83 @@ function initProductsCatalogPage() {
   }
 
   function renderFilteredProducts() {
-    let filtered = PRODUCT_CATALOG.filter(product => {
-      const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
-      const q = searchQuery.toLowerCase();
+    if (domCards.length === 0) {
+      let filtered = PRODUCT_CATALOG.filter(product => {
+        const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
+        const q = searchQuery.toLowerCase();
+        const matchesSearch = !q ||
+          product.name.toLowerCase().includes(q) ||
+          product.description.toLowerCase().includes(q) ||
+          product.category.toLowerCase().includes(q) ||
+          product.packSize.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (sortMode === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortMode === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortMode === 'name-asc') {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else {
+        filtered.sort((a, b) => Number(b.featured) - Number(a.featured));
+      }
+
+      if (countDisplay) {
+        countDisplay.textContent = `Showing ${filtered.length} of ${PRODUCT_CATALOG.length} Backpacks & Bags`;
+      }
+
+      if (filtered.length === 0) {
+        catalogGrid.innerHTML = '';
+        if (emptyState) emptyState.hidden = false;
+      } else {
+        if (emptyState) emptyState.hidden = true;
+        catalogGrid.innerHTML = filtered.map(createProductCardHTML).join('');
+      }
+      return;
+    }
+
+    // Direct DOM manipulation - preserves all user HTML edits and image tags
+    const q = searchQuery.toLowerCase();
+    let visibleCount = 0;
+
+    domCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const cardTitle = getCardTitle(card);
+      const cardDesc = getCardDesc(card);
+      const matchesCategory = activeCategory === 'All' || cardCategory === activeCategory;
       const matchesSearch = !q ||
-        product.name.toLowerCase().includes(q) ||
-        product.description.toLowerCase().includes(q) ||
-        product.category.toLowerCase().includes(q) ||
-        product.packSize.toLowerCase().includes(q);
-      return matchesCategory && matchesSearch;
+        cardTitle.toLowerCase().includes(q) ||
+        cardDesc.toLowerCase().includes(q) ||
+        cardCategory.toLowerCase().includes(q);
+
+      const matches = matchesCategory && matchesSearch;
+      if (matches) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
     });
 
-    // Apply sorting
+    // Sort existing DOM cards
+    const sortedCards = [...domCards];
     if (sortMode === 'price-asc') {
-      filtered.sort((a, b) => a.price - b.price);
+      sortedCards.sort((a, b) => getCardPrice(a) - getCardPrice(b));
     } else if (sortMode === 'price-desc') {
-      filtered.sort((a, b) => b.price - a.price);
+      sortedCards.sort((a, b) => getCardPrice(b) - getCardPrice(a));
     } else if (sortMode === 'name-asc') {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      // Featured default order
-      filtered.sort((a, b) => Number(b.featured) - Number(a.featured));
+      sortedCards.sort((a, b) => getCardTitle(a).localeCompare(getCardTitle(b)));
     }
+
+    sortedCards.forEach(card => catalogGrid.appendChild(card));
 
     if (countDisplay) {
-      countDisplay.textContent = `Showing ${filtered.length} of ${PRODUCT_CATALOG.length} Backpacks & Bags`;
+      countDisplay.textContent = `Showing ${visibleCount} of ${domCards.length} Backpacks & Bags`;
     }
 
-    if (filtered.length === 0) {
-      catalogGrid.innerHTML = '';
-      if (emptyState) emptyState.hidden = false;
-    } else {
-      if (emptyState) emptyState.hidden = true;
-      catalogGrid.innerHTML = filtered.map(createProductCardHTML).join('');
+    if (emptyState) {
+      emptyState.hidden = (visibleCount > 0);
     }
   }
 
