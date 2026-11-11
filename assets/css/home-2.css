@@ -630,7 +630,7 @@
   position: relative;
   aspect-ratio: 4 / 3.2;
   overflow: hidden;
-  background-color: var(--surface-white);
+  background-color: #FFFFFF !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -757,7 +757,7 @@
   position: relative;
   aspect-ratio: 16 / 11;
   overflow: hidden;
-  background-color: var(--surface-white);
+  background-color: #FFFFFF !important;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -1108,6 +1108,15 @@
 [data-theme="dark"] .h2-bento-body h3,
 [data-theme="dark"] .h2-highlight-chip span {
   color: #FFFFFF;
+}
+
+[data-theme="dark"] .h2-bento-card-main,
+[data-theme="dark"] .h2-bento-media,
+[data-theme="dark"] .h2-quick-card-media,
+[data-theme="dark"] .h2-signature-media,
+[data-theme="dark"] .h2-why-visual-card,
+[data-theme="dark"] .h2-storage-banner-media {
+  background-color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .h2-final-cta-section {
