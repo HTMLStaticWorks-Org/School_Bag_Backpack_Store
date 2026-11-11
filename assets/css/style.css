@@ -803,7 +803,6 @@ img {
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 1010px;
 }
 
 @media (min-width: 576px) {
@@ -865,6 +864,7 @@ img {
   border-radius: var(--radius-sm);
   margin-bottom: 1.25rem;
   box-shadow: var(--shadow-subtle);
+  max-width: 100%;
 }
 
 .hero-tagline-dot {
@@ -872,6 +872,7 @@ img {
   height: 9px;
   border-radius: 50%;
   background-color: var(--mint-secondary);
+  flex-shrink: 0;
 }
 
 .hero-tagline-text {
@@ -881,6 +882,8 @@ img {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--navy-primary);
+  white-space: normal;
+  line-height: 1.35;
 }
 
 .hero-title {
@@ -2845,6 +2848,7 @@ img {
 
 /* Equal button widths for any section CTA group with multiple buttons */
 .hero-cta-group,
+.h2-hero-cta-row,
 .h2-hero-cta-group,
 .final-cta-content > .d-flex,
 .h2-final-cta-section .d-flex,
@@ -2857,6 +2861,7 @@ img {
   max-width: 520px;
 }
 
+.h2-hero-cta-row,
 .h2-hero-cta-group,
 .h2-final-cta-section .d-flex {
   margin-left: auto;
@@ -2864,6 +2869,7 @@ img {
 }
 
 .hero-cta-group > *,
+.h2-hero-cta-row > *,
 .h2-hero-cta-group > *,
 .final-cta-content > .d-flex > *,
 .h2-final-cta-section .d-flex > *,
@@ -2871,6 +2877,75 @@ img {
 [aria-labelledby="enquiry-callout-heading"] .col-lg-4 > * {
   width: 100% !important;
   justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .hero-section {
+    min-height: auto !important;
+    padding: 2.25rem 0 !important;
+  }
+
+  .hero-tagline-bar {
+    max-width: 100% !important;
+    padding: 0.35rem 0.65rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-tagline-text {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+  }
+
+  .hero-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .hero-lead {
+    font-size: 0.94rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-cta-group,
+  .h2-hero-cta-row,
+  .h2-hero-cta-group,
+  .final-cta-content > .d-flex,
+  .h2-final-cta-section .d-flex,
+  #inlineEnquirySummaryBar > div:last-child,
+  [aria-labelledby="enquiry-callout-heading"] .col-lg-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-cta-group > *,
+  .h2-hero-cta-row > *,
+  .h2-hero-cta-group > *,
+  .final-cta-content > .d-flex > *,
+  .h2-final-cta-section .d-flex > *,
+  #inlineEnquirySummaryBar > div:last-child > *,
+  [aria-labelledby="enquiry-callout-heading"] .col-lg-4 > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-trust-strip {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+    padding-top: 1.25rem !important;
+  }
 }
 
 [data-theme="dark"] .why-feature-icon,
@@ -3366,15 +3441,25 @@ img {
 }
 
 [data-theme="dark"] .prep-temp-badge {
-  background-color: var(--navy-dark);
-  color: var(--lime-accent);
-  border-color: rgba(255, 90, 31, 0.4);
+  background-color: rgba(245, 158, 11, 0.22) !important;
+  color: #FDE68A !important;
+  border: 1px solid var(--mint-secondary) !important;
+  font-weight: 700 !important;
 }
 
 [data-theme="dark"] .prep-icon-box {
-  background-color: rgba(255, 90, 31, 0.18);
-  color: var(--lime-accent);
-  border-color: rgba(255, 90, 31, 0.45);
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #FDE68A !important;
+  border: 1px solid var(--mint-secondary) !important;
+}
+
+[data-theme="dark"] .prep-meta-tag {
+  color: #FDE68A !important;
+  border-top-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .prep-meta-tag i {
+  color: var(--mint-secondary) !important;
 }
 
 [data-theme="dark"] .quality-visual-frame {

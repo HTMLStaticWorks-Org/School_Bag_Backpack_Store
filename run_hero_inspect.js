@@ -1,0 +1,104 @@
+const fs = require('fs');
+const path = require('path');
+const { execFileSync } = require('child_process');
+
+const rootDir = 'c:\\Users\\prath\\OneDrive\\Desktop\\Websites\\Nov_1\\School Bag & Backpack Store';
+const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+
+const inspectScript = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hero Inspect</title>
+  <style>body { margin: 0; padding: 0; }</style>
+</head>
+<body>
+  <iframe id="frame1" src="file:///${rootDir.replace(/\\/g, '/')}/index.html" style="width: 368px; height: 1000px; border: none;"></iframe>
+  <iframe id="frame2" src="file:///${rootDir.replace(/\\/g, '/')}/home-2.html" style="width: 368px; height: 1000px; border: none;"></iframe>
+  <pre id="HERO_OUT"></pre>
+  <script>
+    let done = 0;
+    const result = {};
+
+    function check(id, name, selector) {
+      const f = document.getElementById(id);
+      const doc = f.contentDocument;
+      const win = f.contentWindow;
+      const section = doc.querySelector(selector);
+      if (!section) {
+        result[name] = 'Section not found: ' + selector;
+        return;
+      }
+      const sRect = section.getBoundingClientRect();
+      const items = [];
+      const els = section.querySelectorAll('*');
+      for (const el of els) {
+        // ignore hidden
+        const style = win.getComputedStyle(el);
+        if (style.display === 'none' || style.visibility === 'hidden') continue;
+        const r = el.getBoundingClientRect();
+        if (r.width === 0 && r.height === 0) continue;
+        if (r.right > win.innerWidth + 1 || r.left < 0) {
+          items.push({
+            tag: el.tagName,
+            cls: el.className,
+            left: Math.round(r.left),
+            right: Math.round(r.right),
+            width: Math.round(r.width),
+            text: el.textContent.trim().slice(0, 30)
+          });
+        }
+      }
+      result[name] = {
+        viewportWidth: win.innerWidth,
+        sectionRect: { left: Math.round(sRect.left), right: Math.round(sRect.right), width: Math.round(sRect.width) },
+        overflowOrOutItems: items,
+        allButtons: Array.from(section.querySelectorAll('a, button')).map(b => {
+          const r = b.getBoundingClientRect();
+          return {
+            text: b.textContent.trim().slice(0, 30),
+            cls: b.className,
+            left: Math.round(r.left),
+            right: Math.round(r.right),
+            top: Math.round(r.top),
+            bottom: Math.round(r.bottom),
+            width: Math.round(r.width),
+            height: Math.round(r.height),
+            visible: r.right <= win.innerWidth && r.left >= 0 && r.height > 0
+          };
+        })
+      };
+    }
+
+    function run() {
+      check('frame1', 'index_hero', '.hero-section');
+      check('frame2', 'home2_hero', '.h2-hero-section');
+      document.getElementById('HERO_OUT').textContent = JSON.stringify(result, null, 2);
+    }
+
+    window.onload = () => {
+      setTimeout(run, 500);
+    };
+  </script>
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, 'inspect_heroes.html'), inspectScript, 'utf8');
+
+const out = execFileSync(chrome, [
+  '--headless=new',
+  '--disable-gpu',
+  '--no-sandbox',
+  '--allow-file-access-from-files',
+  '--disable-web-security',
+  '--dump-dom',
+  'file:///' + path.join(__dirname, 'inspect_heroes.html').replace(/\\/g, '/')
+], { encoding: 'utf8', timeout: 15000 });
+
+const m = out.match(/<pre id="HERO_OUT">([\s\S]*?)<\/pre>/);
+if (m) {
+  console.log(m[1]);
+} else {
+  console.log('No HERO_OUT found');
+}
+
