@@ -1819,6 +1819,8 @@ img {
   min-height: 290px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 3rem 0;
   border-bottom: 3px solid var(--mint-secondary);
   position: relative;
@@ -1826,6 +1828,10 @@ img {
 
 .page-hero-banner .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .page-hero-banner .eyebrow-badge,
@@ -1840,6 +1846,12 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
+.page-hero-banner .eyebrow-badge {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page-hero-banner .eyebrow-badge i,
 .contact-info-card .eyebrow-badge i {
   color: #FFFFFF !important;
@@ -1851,19 +1863,35 @@ img {
   font-size: clamp(1.65rem, 2.35vw, 2.2rem);
   line-height: 1.22;
   font-weight: 700;
+  text-align: center;
 }
 
 .page-hero-banner p {
   color: rgba(255, 255, 255, 0.9);
   max-width: 680px;
-  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.35rem;
   font-size: clamp(0.95rem, 1.05vw, 1.05rem);
   line-height: 1.55;
+  text-align: center;
 }
 
 /* ==========================================================================
    13. PRODUCTS PAGE — CONTROLS, FILTERS & ENQUIRY CART DRAWER
    ========================================================================== */
+#inlineEnquirySummaryBar {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inlineEnquirySummaryBar[hidden] {
+  display: none !important;
+}
+
 .catalog-toolbar {
   background-color: var(--surface-white);
   border: 1px solid var(--border-color);
@@ -2482,18 +2510,20 @@ img {
   background-color: var(--surface-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
 }
 
 .contact-map-header {
-  padding: 1.5rem clamp(1.25rem, 3vw, 2.25rem);
+  padding: 0 0 1.75rem 0;
+  margin-bottom: 1.75rem;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .contact-map-frame {
@@ -2501,6 +2531,9 @@ img {
   width: 100%;
   height: 420px;
   background-color: var(--bg-soft-mint);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
 .contact-map-frame iframe {
@@ -2801,9 +2834,43 @@ img {
 }
 
 [data-theme="dark"] .eyebrow-badge-mint {
-  background-color: rgba(245, 158, 11, 0.16);
-  color: var(--mint-secondary);
-  border-color: rgba(245, 158, 11, 0.45);
+  background-color: rgba(245, 158, 11, 0.22) !important;
+  color: #FDE68A !important;
+  border-color: var(--mint-secondary) !important;
+}
+
+[data-theme="dark"] .eyebrow-badge-mint i {
+  color: #FDE68A !important;
+}
+
+/* Equal button widths for any section CTA group with multiple buttons */
+.hero-cta-group,
+.h2-hero-cta-group,
+.final-cta-content > .d-flex,
+.h2-final-cta-section .d-flex,
+#inlineEnquirySummaryBar > div:last-child,
+[aria-labelledby="enquiry-callout-heading"] .col-lg-4 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem !important;
+  width: 100%;
+  max-width: 520px;
+}
+
+.h2-hero-cta-group,
+.h2-final-cta-section .d-flex {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-group > *,
+.h2-hero-cta-group > *,
+.final-cta-content > .d-flex > *,
+.h2-final-cta-section .d-flex > *,
+#inlineEnquirySummaryBar > div:last-child > *,
+[aria-labelledby="enquiry-callout-heading"] .col-lg-4 > * {
+  width: 100% !important;
+  justify-content: center;
 }
 
 [data-theme="dark"] .why-feature-icon,
